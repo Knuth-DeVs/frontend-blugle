@@ -8,7 +8,7 @@ import Eye from '../../assets/eye.png'
 const Service = () => {
   return (
     <div className='bg-blue-200 w-full my-16 pt-5 pb-12'>
-        <h1 className='text-center text-2xl text'>Services We Provide</h1>
+        <h1 className='text-center text-2xl text-navlinks font-bold'>Services We Provide</h1>
         <div className='flex items-center justify-center mt-8'>
             <img src={Services} alt="" className='w-[500px] '/>
         </div>
