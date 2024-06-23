@@ -5,21 +5,27 @@ import Nurse from '../../assets/connect.png'
 const FormSection = () => {
   return (
     <>
+        <div className='w-full h-56 bg-gradient-to-r from-[#70C0E6] to-navlinkshover mt-32'>
         <div className='flex flex-row items-center justify-between my-8 mx-10'>
             <div>
-                <div className='text-5xl font-bold text-navlinkshover pl-20'>
-                    <h1>Connect</h1>
-                    <h1>with</h1>
-                    <h1>Us</h1>
-                </div>
-                <p className='text-md font-normal text-gray-500 pl-20'>See how blugle delivers <br /> patient care</p>
-                <img src={Nurse} alt="Connect" className=' w-[400px] mt-24'/>
+                <img src={Nurse} alt="Connect" className=' w-[300px] -mt-32'/>
             </div>
-            <div>
-                <Form/>
+            <div className='w-[500px]'>
+                <h1 className='text-5xl text-navlinkshover font-bold'>Connect</h1>
+                <h1 className='text-5xl text-navlinkshover font-bold'>With</h1>
+                <h1 className='text-5xl text-navlinkshover font-bold'>Us</h1>
+                <p className='text-white '>See how Blugle delivers <br/> patient care</p>
+            </div>
+            <div className='flex flex-row-reverse items-center gap-8 mr-32'>
+                <div className='bg-white px-4 py-2 rounded-2xl text-xl text-navlinks font-semibold cursor-pointer'>
+                    <p>Register</p>
+                </div>
+                <div className='bg-white px-4 py-2 rounded-2xl text-xl text-navlinks font-semibold cursor-pointer'>
+                    <p>Login</p>
+                </div>
             </div>
         </div>
-        <div className='w-full h-56 bg-gradient-to-r from-[#70C0E6] to-navlinkshover -mt-80'/>
+        </div>
     </>
     
   )

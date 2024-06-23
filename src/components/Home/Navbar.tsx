@@ -18,9 +18,8 @@ const Navbar = () => {
                 <ul className="flex gap-8 font-normal text-navlinks text-xl">
                     <li onClick={() => handleLinkClick('Home')} className={`cursor-pointer hover:text-navlinkshover duration-300 ease-linear ${selectedLink === 'Home'? 'underline text-navlinkshover' : ''}`}>Home</li>
                     <li onClick={() => handleLinkClick('About')} className={`cursor-pointer hover:text-navlinkshover duration-300 ease-linear ${selectedLink === 'About'? 'underline text-navlinkshover' : ''}`}>About Us</li>
-                    <li onClick={() => handleLinkClick('Company')} className={`cursor-pointer hover:text-navlinkshover duration-300 ease-linear ${selectedLink === 'Company'? 'underline text-navlinkshover' : ''}`}>Company</li>
+                    <li onClick={() => handleLinkClick('Company')} className={`cursor-pointer hover:text-navlinkshover duration-300 ease-linear ${selectedLink === 'Company'? 'underline text-navlinkshover' : ''}`}>Contact Us</li>
                     <li onClick={() => handleLinkClick('FAQ')} className={`cursor-pointer hover:text-navlinkshover duration-300 ease-linear ${selectedLink === 'FAQ'? 'underline text-navlinkshover' : ''}`}>FAQ's</li>
-                    <li onClick={() => handleLinkClick('Solutions')} className={`cursor-pointer hover:text-navlinkshover duration-300 ease-linear ${selectedLink === 'Solutions'? 'underline text-navlinkshover' : ''}`}>Solutions</li>
                 </ul>
                 <ul className="flex font-medium text-navlinkshover gap-8 text-xl">
                   <li className='cursor-pointer duration-300 ease-linear'>Login</li>
