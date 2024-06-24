@@ -14,28 +14,28 @@ const Service = () => {
         </div>
         <div className='grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 px-8 md:px-32 -mt-20'>
             <div className='bg-[#70C0E6] pb-8'>
-                <img src={Dental} alt="" className='md:w-28 w-12'/>
-                <p className='text-navlinkshover md:text-xl font-semibold pl-2'>Dental Care</p>
-                <p className='pl-2 md:w-44 max-md:text-sm'>We provide the best when it comes to Dental.</p>
-                <a href="#" className='pl-2 text-blue-800 pt-8 max-md:text-sm'>Learn more...</a>
+                <img src={Dental} alt="" className='lg:w-28 w-12'/>
+                <p className='text-navlinkshover lg:text-xl font-semibold pl-2'>Dental Care</p>
+                <p className='pl-2 lg:w-44 max-lg:text-sm'>We provide the best when it comes to Dental.</p>
+                <a href="#" className='pl-2 text-blue-800 pt-8 max-lg:text-sm'>Learn more...</a>
             </div>
             <div className='bg-[#70C0E6] pb-8'>
-                <img src={Neuro} alt="" className='md:w-24 w-10'/>
-                <p className='text-navlinkshover md:text-xl font-semibold pl-2'>Neurology Care</p>
-                <p className='pl-2 md:w-44 max-sm:text-sm'>We provide the best when it comes to Neurology.</p>
-                <a href="#" className='pl-2 text-blue-800 max-md:text-sm'>Learn more...</a>
+                <img src={Neuro} alt="" className='lg:w-24 w-10'/>
+                <p className='text-navlinkshover lg:text-xl font-semibold pl-2'>Neurology Care</p>
+                <p className='pl-2 lg:w-44 max-lg:text-sm'>We provide the best when it comes to Neurology.</p>
+                <a href="#" className='pl-2 text-blue-800 max-lg:text-sm'>Learn more...</a>
             </div>
             <div className='bg-[#70C0E6] pb-8'>
-                <img src={Skin} alt="" className='md:w-28 w-12'/>
-                <p className='text-navlinkshover md:text-xl font-semibold pl-2'>Skin Care</p>
-                <p className='p-2 md:w-44 max-sm:text-sm'>We provide the best when it comes to Skin.</p>
-                <a href="#" className='pl-2 text-blue-800 max-md:text-sm'>Learn more...</a>
+                <img src={Skin} alt="" className='lg:w-28 w-12'/>
+                <p className='text-navlinkshover lg:text-xl font-semibold pl-2'>Skin Care</p>
+                <p className='p-2 lg:w-44 max-lg:text-sm'>We provide the best when it comes to Skin.</p>
+                <a href="#" className='pl-2 text-blue-800 max-lg:text-sm'>Learn more...</a>
             </div>
             <div className='bg-[#70C0E6] pb-8'>
-                <img src={Eye} alt="" className='md:w-24 w-12 pl-2'/>
-                <p className='text-navlinkshover md:text-xl font-semibold pl-2'>Eye Care</p>
-                <p className='pl-2 md:w-44 max-md:text-sm'>We provide the best when it comes to Eye.</p>
-                <a href="#" className='pl-2 text-blue-800 max-md:text-sm'>Learn more...</a>
+                <img src={Eye} alt="" className='lg:w-24 w-12 pl-2'/>
+                <p className='text-navlinkshover gl:text-xl font-semibold pl-2'>Eye Care</p>
+                <p className='pl-2 lg:w-44 max-lg:text-sm'>We provide the best when it comes to Eye.</p>
+                <a href="#" className='pl-2 text-blue-800 max-lg:text-sm'>Learn more...</a>
             </div>
         </div>
     </div>
