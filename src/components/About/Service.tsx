@@ -12,14 +12,14 @@ const Service = () => {
         <div className='flex items-center justify-center mt-8'>
             <img src={Services} alt="" className='md:w-[500px] w-[400px] '/>
         </div>
-        <div className='grid grid-cols-4 gap-2 md:gap-4 px-4 md:px-32 -mt-20'>
-            <div className='bg-[#70C0E6] md:pb-4'>
+        <div className='grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 px-8 md:px-32 -mt-20'>
+            <div className='bg-[#70C0E6] pb-8'>
                 <img src={Dental} alt="" className='md:w-28 w-12'/>
                 <p className='text-navlinkshover md:text-xl font-semibold pl-2'>Dental Care</p>
                 <p className='pl-2 md:w-44 max-md:text-sm'>We provide the best when it comes to Dental.</p>
                 <a href="#" className='pl-2 text-blue-800 pt-8 max-md:text-sm'>Learn more...</a>
             </div>
-            <div className='bg-[#70C0E6] md:pb-4'>
+            <div className='bg-[#70C0E6] pb-8'>
                 <img src={Neuro} alt="" className='md:w-24 w-10'/>
                 <p className='text-navlinkshover md:text-xl font-semibold pl-2'>Neurology Care</p>
                 <p className='pl-2 md:w-44 max-sm:text-sm'>We provide the best when it comes to Neurology.</p>
