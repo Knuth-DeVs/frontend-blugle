@@ -17,6 +17,8 @@ const Navbar = () => {
         setMobileDrawerOpen(!mobileDrawerOpen)
     }
 
+    
+
   return (
     <nav className="sticky top-0 z-50 backdrop-blur-lg w-full">
         <div className="mx-4 md:mx-10 relative">
@@ -47,7 +49,7 @@ const Navbar = () => {
                 </div>
             </div>
             {mobileDrawerOpen && (
-                <div className="fixed left-0 z-20 w-3/4 h-[90vh] p-12 flex flex-col justify-center items-center lg:hidden bg-navlinks">
+                <div className="fixed transform -translate-x-[5%] transition-all duration-300 ease-linear left-0 z-20 w-3/4 h-[90vh] p-12 flex flex-col justify-center items-center lg:hidden bg-white">
                     <ul className='font-semibold text-lg'>
                         <li className=' hover:text-blue-500 duration-300 ease-in py-3 text-center'><Link to="/">Home</Link></li> <hr className='w-60'/>
                         <li className=' hover:text-blue-500 duration-300 ease-in py-3 text-center'><Link to="/about">About Us</Link></li> <hr className='w-60'/>
