@@ -10,7 +10,7 @@ const Banner = () => {
                 <div className='flex flex-col gap-4'>
                     <h1 className='text-3xl md:text-6xl font-semibold text-navlinkshover'>Our Solutions</h1>
                     <p className='text-white pr-12'>We created an interface that is simple and easy to use in order to handle patientspersonal and medical information, book appointment based on doctor availability,manage patient reports, and send appointment reminders to patients as well as provide updates on the lab reports.</p>
-                    <div className='flex items-center justify-evenly text-lg lg:text-3xl text-navlinkshover font-semibold'>
+                    <div className='flex items-center justify-evenly text-lg md:text-3xl text-navlinkshover font-semibold'>
                         <div>
                             <p>Patient Information</p>
                             <p>Notifying Patients</p>
