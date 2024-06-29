@@ -1,5 +1,4 @@
 import React from 'react'
-import Form from './Form'
 import Nurse from '../../assets/connect.png'
 
 const FormSection = () => {

@@ -35,7 +35,7 @@ const Service = () => {
                 <img src={Eye} alt="" className='lg:w-24 w-12 pl-2'/>
                 <p className='text-navlinkshover gl:text-xl font-semibold pl-2'>Eye Care</p>
                 <p className='pl-2 lg:w-44 max-lg:text-sm'>We provide the best when it comes to Eye.</p>
-                <a href="#" className='pl-2 text-blue-800 max-lg:text-sm'>Learn more...</a>
+                <a href="#" className='pl-2 text-blue-800 max-md:text-sm'>Learn more...</a>
             </div>
         </div>
     </div>
