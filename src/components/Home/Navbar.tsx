@@ -33,9 +33,10 @@ const Navbar = () => {
                   <Link to='/about' onClick={() => handleLinkClick('About')}>
                     <li className={`cursor-pointer hover:text-navlinkshover duration-300 ease-linear ${selectedLink === 'About'? 'underline text-navlinkshover' : ''}`}>About Us</li>
                   </Link>
-                    
-                    <li onClick={() => handleLinkClick('Company')} className={`cursor-pointer hover:text-navlinkshover duration-300 ease-linear ${selectedLink === 'Company'? 'underline text-navlinkshover' : ''}`}>Contact Us</li>
-                    <li onClick={() => handleLinkClick('FAQ')} className={`cursor-pointer hover:text-navlinkshover duration-300 ease-linear ${selectedLink === 'FAQ'? 'underline text-navlinkshover' : ''}`}>FAQ's</li>
+                  <Link to='/contact' onClick={() => handleLinkClick('Company')}>
+                    <li className={`cursor-pointer hover:text-navlinkshover duration-300 ease-linear ${selectedLink === 'Company'? 'underline text-navlinkshover' : ''}`}>Contact Us</li>
+                  </Link>
+                    <li onClick={() => handleLinkClick('Services')} className={`cursor-pointer hover:text-navlinkshover duration-300 ease-linear ${selectedLink === 'FAQ'? 'underline text-navlinkshover' : ''}`}>Services</li>
                 </ul>
                 <ul className="hidden lg:flex font-medium text-navlinkshover gap-8 text-xl">
                   <li className='cursor-pointer duration-300 ease-linear'><Link to="/login">Login</Link></li>
@@ -53,8 +54,8 @@ const Navbar = () => {
                     <ul className='font-semibold text-lg'>
                         <li className=' hover:text-blue-500 duration-300 ease-in py-3 text-center'><Link to="/">Home</Link></li> <hr className='w-60'/>
                         <li className=' hover:text-blue-500 duration-300 ease-in py-3 text-center'><Link to="/about">About Us</Link></li> <hr className='w-60'/>
-                        <li className=' hover:text-blue-500 duration-300 ease-in py-3 text-center'><Link to="#about">Contact Us</Link></li> <hr className='w-60'/>
-                        <li className=' hover:text-blue-500 duration-300 ease-in py-3 text-center'><Link to="#about">FAQ's</Link></li> <hr className='w-60'/>
+                        <li className=' hover:text-blue-500 duration-300 ease-in py-3 text-center'><Link to="/contact">Contact Us</Link></li> <hr className='w-60'/>
+                        <li className=' hover:text-blue-500 duration-300 ease-in py-3 text-center'><Link to="#about">Service</Link></li> <hr className='w-60'/>
                     </ul>
                     <ul className="flex flex-row items-center font-medium text-navlinkshover gap-8 text-xl pt-6">
                       <li className='cursor-pointer duration-300 ease-linear hover:bg-blue-400 border border-blue-400 px-3 py-1 rounded-xl hover:text-white '><Link to="/login">Login</Link></li>

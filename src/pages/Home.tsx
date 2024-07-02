@@ -4,9 +4,13 @@ import FormSection from '../components/Home/FormSection'
 import Hero from '../components/Home/Hero'
 import HeroBtn from '../components/Home/HeroBtn'
 import Navbar from '../components/Home/Navbar'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const Home = () => {
+
+  useEffect(()=> {
+    document.title = "Blugle Medical and Supply Service"
+  })
   return (
     <div>
         <Navbar/>

@@ -5,7 +5,7 @@ const SignUpForm = () => {
   return (
     <div className='lg:h-[100vh]'>
       <Link to='/'>Home</Link>
-      <div className='  pl-8 lg:pl-36 md:mt-24 mt-8'>
+      <div className='  pl-8 lg:pl-36 md:mt-6 mt-8'>
           <div>
               <h2 className='text-lg md:text-xl uppercase '>REGISTER</h2>
               <p className='text-4xl md:text-5xl font-bold pt-2'>Sign Up For Free</p>

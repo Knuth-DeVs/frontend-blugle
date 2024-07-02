@@ -6,7 +6,7 @@ const LoginDisplay = () => {
   return (
     <div className='bg-[rgb(49,111,246)] h-[100vh] w-[550px] rounded-tr-3xl rounded-br-3xl'>
       <Link to='/'>Home</Link>
-        <div className='text-center pt-16'>
+        <div className='text-center pt-2'>
             <h2 className='text-3xl font-bold text-white'>LOGIN</h2>
             <h2 className='text-lg text-white'>Please enter your details</h2>
         </div>
