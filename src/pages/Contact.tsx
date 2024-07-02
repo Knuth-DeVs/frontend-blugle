@@ -6,6 +6,7 @@ import location from '../assets/location.png'
 import email from '../assets/email.png'
 import clock from '../assets/clock.png'
 import advert from '../assets/contactAvatar.png'
+import Footer from '../components/Home/Footer'
 
 const Contact = () => {
   return (
@@ -84,6 +85,7 @@ const Contact = () => {
             </div>
                 <img src={advert} alt="" className='w-36 md:w-44 -mt-36 md:-mt-40'/>
         </div>
+        <Footer/>
     </div>
   )
 }

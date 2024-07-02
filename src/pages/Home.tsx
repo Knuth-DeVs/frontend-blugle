@@ -1,5 +1,6 @@
 import Banner from '../components/Home/Banner'
 import DoctorInfo from '../components/Home/DoctorInfo'
+import Footer from '../components/Home/Footer'
 import FormSection from '../components/Home/FormSection'
 import Hero from '../components/Home/Hero'
 import HeroBtn from '../components/Home/HeroBtn'
@@ -19,6 +20,7 @@ const Home = () => {
         <Banner/>
         <DoctorInfo/>
         <FormSection/>
+        <Footer/>
     </div>
   )
 }

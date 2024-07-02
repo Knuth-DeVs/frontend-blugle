@@ -4,6 +4,7 @@ import Hero from '../components/About/Hero'
 import Main from '../components/About/Main'
 import Service from '../components/About/Service'
 import Testimonial from '../components/About/Testimonial'
+import Footer from '../components/Home/Footer'
 
 const About = () => {
   useEffect(() => {
@@ -16,6 +17,7 @@ const About = () => {
         <Main/>
         <Service/>
         <Testimonial/>
+        <Footer/>
     </div>
   )
 }
