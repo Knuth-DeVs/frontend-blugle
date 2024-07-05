@@ -2,7 +2,7 @@ import React from 'react'
 import Cartoon from '../../assets/cartoon.png'
 import { Link } from 'react-router-dom'
 
-const LoginDisplay = () => {
+const LoginDisplay: React.FC = () => {
   return (
     <div className='bg-[rgb(49,111,246)] h-[100vh] w-[550px] rounded-tr-3xl rounded-br-3xl'>
       <Link to='/'>Home</Link>

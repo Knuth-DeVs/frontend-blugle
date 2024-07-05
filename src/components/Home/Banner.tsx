@@ -1,7 +1,7 @@
 import React from 'react'
 import BannerImg from '../../assets/banner.png'
 
-const Banner = () => {
+const Banner: React.FC = () => {
   return (
     <div className='mb-6'>
         <div className=' w-full lg:h-[400px] bg-[#70C0E6] mt-60 shadow-lg py-6 md:py-0 px-2'>

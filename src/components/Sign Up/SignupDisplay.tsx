@@ -1,7 +1,7 @@
 import React from 'react'
 import Cartoon from '../../assets/cartton2.png'
 
-const SignupDisplay = () => {
+const SignupDisplay: React.FC = () => {
   return (
     <div className='bg-[rgb(49,111,246)] h-[100vh] w-[550px] rounded-tl-3xl rounded-bl-3xl'>
         <div className='text-center pt-6'>

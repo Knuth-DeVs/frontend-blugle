@@ -1,13 +1,13 @@
 import React from 'react'
 import Home from './pages/Home'
 import About from './pages/About'
-import Services from './pages/Services'
 import Login from './pages/Login'
 import { Routes, Route } from 'react-router-dom'
 import SignUp from './pages/SignUp'
 import Contact from './pages/Contact'
+import Services from './pages/Services'
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <>
       <Routes>

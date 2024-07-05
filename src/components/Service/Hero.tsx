@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Hero = () => {
+const Hero: React.FC = () => {
   return (
     <div className='flex flex-col w-full h-[60vh] md:h-[85vh] bg-[#316ff6] items-center justify-center text-white '>
         <h5 className='text-2xl md:text-4xl font-bold'>OUR SERVICES</h5>

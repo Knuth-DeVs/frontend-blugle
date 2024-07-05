@@ -2,7 +2,7 @@ import React from 'react'
 import hero from '../../assets/hero.png'
 import { Link } from 'react-router-dom'
 
-const Hero = () => {
+const Hero: React.FC = () => {
   return (
     <div>
       <div className='bg-[rgb(49,111,246)] w-full shadow-lg '>

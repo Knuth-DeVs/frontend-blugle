@@ -1,7 +1,7 @@
 import React from 'react'
 import Vision from '../../assets/vision.png'
 
-const Main = () => {
+const Main: React.FC = () => {
   return (
     <div>
         <div className='my-8'>

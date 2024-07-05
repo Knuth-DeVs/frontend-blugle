@@ -2,7 +2,7 @@ import React from 'react'
 import Nurse from '../../assets/connect.png'
 import { Link } from 'react-router-dom'
 
-const FormSection = () => {
+const FormSection: React.FC = () => {
   return (
     <>
         <div className='w-full h-30 lg:h-56 bg-gradient-to-r from-[#70C0E6] to-navlinkshover mt-32'>
