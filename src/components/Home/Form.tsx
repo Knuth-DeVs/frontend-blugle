@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Form = () => {
+const Form: React.FC = () => {
   return (
     <div className='border border-black w-[700px] bg-white'>
       <div className='bg-[#316FF6] w-full flex items-center justify-center h-8'>
