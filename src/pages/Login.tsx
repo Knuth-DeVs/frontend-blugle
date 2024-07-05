@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import LoginForm from '../components/Login/LoginForm'
 import LoginDisplay from '../components/Login/LoginDisplay'
 
-const Login = () => {
+const Login: React.FC = () => {
 
   useEffect(()=> {
     document.title = "Blugle - Log In"

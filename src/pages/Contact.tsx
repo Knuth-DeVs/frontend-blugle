@@ -5,7 +5,7 @@ import advert from '../assets/contactAvatar.png'
 import Footer from '../components/Home/Footer'
 import ContactInfo from '../components/Contact/ContactInfo'
 
-const Contact = () => {
+const Contact: React.FC = () => {
   return (
     <div>
         <Navbar/>
@@ -18,7 +18,7 @@ const Contact = () => {
                 title="Map"
                 className="md:w-[600px] md:h-[400px] border-0"
                 src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=place_id:ChIJbQ9s3X1J9jERz81h034r77k"
-                allowFullScreen=""
+                allowFullScreen={true}
                 loading="lazy"
             ></iframe>
         </div>

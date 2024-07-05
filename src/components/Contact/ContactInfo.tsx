@@ -4,7 +4,7 @@ import location from '../../assets/location.png'
 import email from '../../assets/email.png'
 import clock from '../../assets/clock.png'
 
-const ContactInfo = () => {
+const ContactInfo: React.FC = () => {
   return (
     <div>
         <div className='mt-8 mb-4'>

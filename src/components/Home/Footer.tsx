@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <div className='mt-6 bg-navlinkshover w-full'>
         <div className='md:mx-32 grid grid-cols-2 md:grid-cols-3 gap-10 md:gap-8 mx-8'>

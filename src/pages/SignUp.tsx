@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import SignUpForm from '../components/Sign Up/SignUpForm'
 import SignupDisplay from '../components/Sign Up/SignupDisplay'
 
-const Login = () => {
+const Login: React.FC = () => {
 
   useEffect(()=> {
     document.title = "Blugle - Sign Up"

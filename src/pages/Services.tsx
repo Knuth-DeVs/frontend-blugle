@@ -5,7 +5,7 @@ import SectionSec from '../components/Service/ServiceSec'
 import ContactInfo from '../components/Contact/ContactInfo'
 import Footer from '../components/Home/Footer'
 
-const Services = () => {
+const Services: React.FC = () => {
   return (
     <div>
         <Navbar/>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const LoginForm = () => {
+const LoginForm: React.FC = () => {
   return (
     <div>
       <div className=' h-[100vh] pr-8 lg:pr-36 mt-24'>

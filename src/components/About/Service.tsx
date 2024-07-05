@@ -5,7 +5,7 @@ import Neuro from '../../assets/neurology.png'
 import Skin from '../../assets/skin.png'
 import Eye from '../../assets/eye.png'
 
-const Service = () => {
+const Service: React.FC = () => {
   return (
     <div className='bg-blue-200 w-full my-16 pt-5 pb-12'>
         <h1 className='text-center text-2xl text-navlinks font-bold'>Services We Provide</h1>

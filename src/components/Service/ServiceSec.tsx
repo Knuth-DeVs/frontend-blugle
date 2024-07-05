@@ -6,7 +6,7 @@ import MRI from '../../assets/mri.png'
 import Blood from '../../assets/blood.png'
 import Dialysis from '../../assets/dailysis.png'
 
-const ServiceSec = () => {
+const ServiceSec: React.FC = () => {
   return (
     <div className='grid grid-cols-2 md:grid-cols-3 mx-8 lg:mx-36 mt-10 gap-10'>
         <div className='border-2 border-blue-500 rounded-md '>

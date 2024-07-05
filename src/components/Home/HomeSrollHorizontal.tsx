@@ -25,16 +25,16 @@ const ScrollData = [
     },
 ]
 
-const HomeScrollHorizontal = () => {
+const HomeScrollHorizontal: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0? ScrollData.length - 1 : prevIndex - 1));
-  };
+  // const handlePrev = () => {
+  //   setCurrentIndex((prevIndex) => (prevIndex === 0? ScrollData.length - 1 : prevIndex - 1));
+  // };
 
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === ScrollData.length - 1? 0 : prevIndex + 1));
-  };
+  // const handleNext = () => {
+  //   setCurrentIndex((prevIndex) => (prevIndex === ScrollData.length - 1? 0 : prevIndex + 1));
+  // };
 
   const renderItems = () => {
     const start = currentIndex;

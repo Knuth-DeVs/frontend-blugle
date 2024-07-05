@@ -1,6 +1,6 @@
 import React from 'react'
 
-const DoctorInfo = () => {
+const DoctorInfo: React.FC = () => {
   return (
     <div className='w-full '>
         <div className='w-[2px] h-44 flex justify-center items-center mx-auto mb-2 bg-[#70C0E6]'/>

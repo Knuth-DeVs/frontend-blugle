@@ -1,7 +1,7 @@
 import React from 'react'
 import HomeScrollHorizontal from './HomeSrollHorizontal'
 
-const HeroBtn = () => {
+const HeroBtn: React.FC = () => {
   return (
     <>
       <div className='w-full'>

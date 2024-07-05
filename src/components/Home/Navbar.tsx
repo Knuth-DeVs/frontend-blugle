@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { CgMenu } from "react-icons/cg";
 import { AiOutlineClose } from "react-icons/ai";
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   const [selectedLink, setSelectedLink] = useState<string>('');
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
 

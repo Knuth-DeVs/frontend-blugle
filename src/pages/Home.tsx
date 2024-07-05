@@ -8,7 +8,7 @@ import HeroBtn from '../components/Home/HeroBtn'
 import Navbar from '../components/Home/Navbar'
 import React, { useEffect } from 'react'
 
-const Home = () => {
+const Home: React.FC = () => {
 
   useEffect(()=> {
     document.title = "Blugle Medical and Supply Service"
