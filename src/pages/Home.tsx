@@ -1,3 +1,4 @@
+import ContactInfo from '../components/Contact/ContactInfo'
 import Banner from '../components/Home/Banner'
 import DoctorInfo from '../components/Home/DoctorInfo'
 import Footer from '../components/Home/Footer'
@@ -20,6 +21,7 @@ const Home = () => {
         <Banner/>
         <DoctorInfo/>
         <FormSection/>
+        <ContactInfo/>
         <Footer/>
     </div>
   )
