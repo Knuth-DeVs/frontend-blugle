@@ -13,16 +13,16 @@ const SignUpForm = () => {
           </div>
           <form>
             <div className='mt-2 mb-2'>
-              <label className=''>Email</label><br/>
-              <input type='text' placeholder='Email' className='border px-2 py-3 w-[430px] outline-none rounded-lg' />
+              <label className=''>Full Name</label><br/>
+              <input type='text' placeholder='Full name' className='border px-2 py-3 w-[430px] outline-none rounded-lg' />
             </div>
             <div>
-              <label className=''>Password</label><br />
-              <input type='password' placeholder='Password' className='border px-2 py-3 w-[430px] outline-none rounded-lg'/>
+              <label className=''>Email</label><br />
+              <input type='email' placeholder='Email' className='border px-2 py-3 w-[430px] outline-none rounded-lg'/>
             </div>
             <div className='mt-7 mb-4'>
-              <label className=''>Email</label><br/>
-              <input type='text' placeholder='Email' className='border px-2 py-3 w-[430px] outline-none rounded-lg' />
+              <label className=''>Phone Number</label><br/>
+              <input type='number' pattern='[0-9]+' placeholder='Phone Number' className='border px-2 py-3 w-[430px] outline-none rounded-lg' />
             </div>
             <div>
               <label className=''>Password</label><br />
