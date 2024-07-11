@@ -1,11 +1,15 @@
 import React from 'react'
 import Cartoon from '../../assets/cartoon.png'
 import { Link } from 'react-router-dom'
+import { BiArrowBack } from "react-icons/bi";
+
 
 const LoginDisplay: React.FC = () => {
   return (
     <div className='bg-[rgb(49,111,246)] h-[100vh] w-[550px] rounded-tr-3xl rounded-br-3xl'>
-      <Link to='/'>Home</Link>
+      <Link to='/'>
+        <BiArrowBack className='text-5xl text-white cursor-pointer p-2' />
+      </Link>
         <div className='text-center pt-2'>
             <h2 className='text-3xl font-bold text-white'>LOGIN</h2>
             <h2 className='text-lg text-white'>Please enter your details</h2>

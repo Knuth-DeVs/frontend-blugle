@@ -59,9 +59,9 @@ const Navbar: React.FC = () => {
                         <li className=' hover:text-blue-500 duration-300 ease-in py-3 text-center'><Link to="/contact">Contact Us</Link></li> <hr className='w-60'/>
                         <li className=' hover:text-blue-500 duration-300 ease-in py-3 text-center'><Link to="/service">Service</Link></li> <hr className='w-60'/>
                     </ul>
-                    <ul className="flex flex-row items-center font-medium text-navlinkshover gap-8 text-xl pt-6">
-                      <li className='cursor-pointer duration-300 ease-linear hover:bg-blue-400 border border-blue-400 px-3 py-1 rounded-xl hover:text-white '><Link to="/login">Login</Link></li>
-                      <li className='cursor-pointer duration-300 ease-linear bg-blue-400 border hover:bg-white hover:border-blue-400 px-3 py-1 rounded-xl text-white hover:text-black'><Link to="/signup">Sign Up</Link></li>
+                    <ul className="flex flex-row items-center font-medium text-navlinkshover gap-4 text-xl pt-6">
+                      <li className='cursor-pointer duration-300 ease-linear hover:bg-blue-400 border border-blue-400 px-2 py-2 rounded-2xl hover:text-white '><Link to="/login">Login</Link></li>
+                      <li className='cursor-pointer duration-300 ease-linear bg-blue-400 border hover:bg-white hover:border-blue-400 px-2 py-2 rounded-2xl text-white hover:text-black'><Link to="/signup">Sign Up</Link></li>
                     </ul>
                 </div>
             )}

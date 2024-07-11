@@ -9,8 +9,8 @@ const Login: React.FC = () => {
   })
   
   return (
-    <div className='flex flex-row-reverse items-center justify-between h-[100vh] overflow-y-hidden'>
-      <div className="md:w-8/12 lg:ml-6 lg:w-5/12">
+    <div className='lg:flex lg:flex-row-reverse lg:items-center lg:justify-between h-[100vh] overflow-y-hidden'>
+      <div className="">
         <LoginForm/>
       </div>
       <div className='hidden lg:block mb-12 md:mb-0 sm:w-8/12 md:w-6/12'>
