@@ -22,28 +22,30 @@ const Contact: React.FC = () => {
                 loading="lazy"
             ></iframe>
         </div>
-        <div className='border-2 border-blue-600 rounded-2xl flex flex-row p-2 md:mx-20 gap-6 mt-6 mx-8'>
-            <div className='hidden md:block w-[400px] bg-blue-600 rounded-2xl'/>
-            <div className='pt-8 md:pt-20 pb-12 md:pb-40'>
-                <div className='flex flex-col md:flex-row justify-between items-center gap-10'>
+        <div className='border-2 border-blue-600 rounded-2xl flex flex-row p-2 md:mx-20 gap-6 mt-6 mx-6'>
+            <div className='hidden w-[400px] bg-blue-600 rounded-2xl py-auto md:flex md:flex-col md:items-center md:justify-center'>
+                <p className="text-white font-bold text-7xl px-3">Feel Free To Connect With Us.</p>
+            </div> 
+            <div className='pt-8 md:pt-20 pb-12 md:pb-40 w-full'>
+                <div className='flex xl:flex-row justify-between flex-col'>
                     <div>
                         <label>Name</label><br />
-                        <input type="text" className='p-2 border-b border-gray-300 rounded-lg w-[340px] md:w-[300px] outline-none'/>
+                        <input type="text" className='p-2 border-b border-gray-600 rounded-lg w-full outline-none xl:w-[400px]'/>
                     </div>
                     <div>
                         <label>Email</label><br />
-                        <input type="email" className='p-2 border-b border-gray-300 rounded-lg w-[340px] md:w-[300px] outline-none'/>
+                        <input type="email" className='p-2 border-b border-gray-600 rounded-lg w-full outline-none xl:w-[400px]'/>
                     </div>
                 </div>
                 <div className='py-5'>
                     <label htmlFor="">Subject</label><br />
-                    <input type="text" className='p-2 border-b border-gray-300 rounded-lg w-full pr-10 outline-none' />
+                    <input type="text" className='p-2 border-b border-gray-600 rounded-lg w-full pr-10 outline-none' />
                 </div>
                 <div>
                     <label htmlFor="" className='text-blue-600 font-semibold'>Message</label><br />
-                    <textarea name="" id="" placeholder='Type your message here' className='p-2 border-b border-gray-300 rounded-lg w-full h-[130px] outline-none'></textarea>
+                    <textarea name="" id="" placeholder='Type your message here' className='p-2 border-b border-gray-600 rounded-lg w-full h-[130px] outline-none'></textarea>
                 </div>
-                <button className='bg-navlinks p-2 rounded-xl mt-4 text-white'>Send Message</button>
+                <button className='bg-navlinks p-2 rounded-xl mt-4 text-white hover:scale-105 duration-300 ease-linear'>Send Message</button>
             </div>
         </div>
         <ContactInfo/>
