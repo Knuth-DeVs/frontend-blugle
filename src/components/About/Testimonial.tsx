@@ -52,10 +52,10 @@ const Testimonial: React.FC = () => {
       scrollbar={{ draggable: false, hide: true }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
-      className='md:mx-10 mx-2'
+      className='md:mx-10 mx-5'
       breakpoints={{
         320: {
-          slidesPerView: 2,
+          slidesPerView: 1,
           spaceBetween: 15,
         },
         640: {
