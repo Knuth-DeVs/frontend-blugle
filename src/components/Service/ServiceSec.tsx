@@ -8,7 +8,7 @@ import Dialysis from '../../assets/dailysis.png'
 
 const ServiceSec: React.FC = () => {
   return (
-    <div className='grid grid-cols-2 md:grid-cols-3 mx-8 lg:mx-36 mt-10 gap-10'>
+    <div className='grid grid-cols-2 md:grid-cols-3 mx-4 md:mx-8 lg:mx-36 mt-10 gap-3 md:gap-10'>
         <div className='border-2 border-blue-500 rounded-md '>
             <img src={Ultrasound} alt="" className='' />
             <h1 className='font-bold pl-2'>ULTRASOUND</h1>
