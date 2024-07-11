@@ -34,8 +34,6 @@ const ScrollData = [
 
 export default () => {
   return (
-    
-      
     <Swiper
       modules={[Navigation, Pagination, Scrollbar, A11y]}
       spaceBetween={30}
