@@ -52,8 +52,12 @@ const Testimonial: React.FC = () => {
       scrollbar={{ draggable: false, hide: true }}
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
-      className='md:mx-10 mx-5'
+      className='md:mx-10 mx-2'
       breakpoints={{
+        320: {
+          slidesPerView: 2,
+          spaceBetween: 15,
+        },
         640: {
           slidesPerView: 2,
           spaceBetween: 20,
@@ -67,11 +71,11 @@ const Testimonial: React.FC = () => {
       {
         TestimonialData.map((item, id) => {
           return (
-            <SwiperSlide key={id} className=' bg-gradient-to-t from-navlinkshover to-navlinks w-32 p-2 md:h-72'>
+            <SwiperSlide key={id} className=' bg-gradient-to-t from-navlinkshover to-navlinks p-2 h-72'>
               <div>
                 <p className="text-center text-7xl text-white">"</p>
-                <p className='text-sm md:text-lg font-semibold text-white px-3 md:px-6 text-center'>{item.text}</p>
-                <p className='text-center text-white absolute bottom-6 px-auto w-full uppercase font-medium'>{item.name}</p>
+                <p className='text-sm md:text-lg font-semibold text-white px-1 md:px-6 text-center'>{item.text}</p>
+                <p className='text-center text-white text-[10px] md:text-md absolute bottom-6 px-auto w-full uppercase font-medium'>{item.name}</p>
               </div>
             </SwiperSlide>
           )
