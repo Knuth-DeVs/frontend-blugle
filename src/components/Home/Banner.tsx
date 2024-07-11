@@ -4,7 +4,7 @@ import BannerImg from '../../assets/banner.png'
 const Banner: React.FC = () => {
   return (
     <div className='mb-6'>
-        <div className=' w-full lg:h-[400px] bg-[#70C0E6] mt-60 shadow-lg py-6 md:py-0 px-2'>
+        <div className=' w-full lg:h-[400px] bg-[#70C0E6] mt-10 shadow-lg py-6 md:py-0 px-2'>
             <div className='flex flex-row items-center justify-center'>
                 <img src={BannerImg} alt='banner' className='w-[280px] lg:w-[380px] pt-3 hidden md:block'/>
                 <div className='flex flex-col gap-4'>
