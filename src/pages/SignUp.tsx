@@ -8,11 +8,11 @@ const Login: React.FC = () => {
     document.title = "Blugle - Sign Up"
   })
   return (
-    <div className='flex flex-row items-center justify-between h-[100vh]'>
+    <div className='flex md:flex-row md:items-center md:justify-between overflow-hidden'>
       <div>
         <SignUpForm/>
       </div>
-      <div className='hidden lg:block'>
+      <div className='hidden lg:block '>
         <SignupDisplay/>
       </div>
     </div>
