@@ -10,7 +10,8 @@ const Contact: React.FC = () => {
     <div>
         <Navbar/>
         <div className='w-full'>
-            <img src={contact} alt="" className='max-sm:h-[200px]'/>
+            {/* <div className='bg-blue-500 w-full absolute max-sm:h-[200px]'/> */}
+            <img src={contact} alt="" className='max-sm:h-[200px] relative object-cover'/>
         </div>
         <p className='text-[#1941BA] text-2xl font-semibold p-6 md:pl-16'>Find Us Here</p>
         <div className='flex items-center justify-center mx-4 w-90 h-60 lg:w-[95%] lg:mx-10 md:h-[500px]'>
