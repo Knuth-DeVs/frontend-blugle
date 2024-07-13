@@ -15,9 +15,9 @@ const Contact: React.FC = () => {
         </div>
         <p className='text-[#1941BA] text-2xl font-semibold p-6 md:pl-16'>Find Us Here</p>
         <div className='flex items-center justify-center mx-4 w-90 h-60 lg:w-[95%] lg:mx-10 md:h-[500px]'>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31763.67653908062!2d-0.21164169645037129!3d5.646450387417883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9c7dd4389017%3A0x8a140595c282296d!2sLegon%2C%20Accra!5e0!3m2!1sen!2sgh!4v1720870702883!5m2!1sen!2sgh"
-        className='w-full h-full rounded-lg border-none'
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3969.9564665604903!2d-0.2150105292321627!3d5.719410781582314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9de3959141d3%3A0xe75a6e72d11a6574!2sBlugle%20Medical%20Services!5e0!3m2!1sen!2sgh!4v1720875228739!5m2!1sen!2sgh"
         allowFullScreen={true}
+        className='w-full h-full rounded-lg border-none' 
         loading="lazy" 
         referrerPolicy="no-referrer-when-downgrade"></iframe>
         </div>
