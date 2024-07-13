@@ -10,17 +10,16 @@ const Contact: React.FC = () => {
     <div>
         <Navbar/>
         <div className='w-full'>
-            <img src={contact} alt="" className='max-sm:h-[200px]'/>
+            {/* <div className='bg-blue-500 w-full absolute max-sm:h-[200px]'/> */}
+            <img src={contact} alt="" className='max-sm:h-[200px] relative object-cover'/>
         </div>
         <p className='text-[#1941BA] text-2xl font-semibold p-6 md:pl-16'>Find Us Here</p>
-        <div>
-            <iframe
-                title="Map"
-                className="md:w-[600px] md:h-[400px] border-0"
-                src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=place_id:ChIJbQ9s3X1J9jERz81h034r77k"
-                allowFullScreen={true}
-                loading="lazy"
-            ></iframe>
+        <div className='flex items-center justify-center mx-4 w-90 h-60 lg:w-[95%] lg:mx-10 md:h-[500px]'>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31763.67653908062!2d-0.21164169645037129!3d5.646450387417883!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9c7dd4389017%3A0x8a140595c282296d!2sLegon%2C%20Accra!5e0!3m2!1sen!2sgh!4v1720870702883!5m2!1sen!2sgh"
+        className='w-full h-full rounded-lg border-none'
+        allowFullScreen={true}
+        loading="lazy" 
+        referrerPolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div className='border-2 border-blue-600 rounded-2xl flex flex-row p-2 md:mx-20 gap-6 mt-6 mx-6'>
             <div className='hidden w-[400px] bg-blue-600 rounded-2xl py-auto md:flex md:flex-col md:items-center md:justify-center'>
