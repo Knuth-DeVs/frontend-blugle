@@ -1,4 +1,5 @@
 import React from 'react'
+import { TiSocialFacebookCircular, TiSocialInstagram, TiSocialLinkedinCircular } from 'react-icons/ti'
 import { Link } from 'react-router-dom'
 
 const Footer: React.FC = () => {
@@ -29,8 +30,13 @@ const Footer: React.FC = () => {
 
         </div>
         <hr className='py-2 mx-8 mt-4'/>
-        <div className='text-left text-white pb-4 mx-8 md:mx-32'>
+        <div className='text-left text-white pb-4 mx-8 md:mx-32 flex items-center flex-col md:flex-row justify-between'>
             <p>&copy; 2024 BLUGLE. All Rights Reserved by Knuth Devs</p>
+            <div className='flex items-center gap-2 text-4xl'>
+                <TiSocialLinkedinCircular className='cursor-pointer'/>
+                <TiSocialFacebookCircular className='cursor-pointer'/>
+                <TiSocialInstagram className='cursor-pointer'/>
+            </div>
         </div>
     </div>
   )
