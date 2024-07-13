@@ -6,6 +6,7 @@ import { Routes, Route } from 'react-router-dom'
 import SignUp from './pages/SignUp'
 import Contact from './pages/Contact'
 import Services from './pages/Services'
+import ParentComponent from './components/Home/ParentComponent'
 
 const App: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const App: React.FC = () => {
         <Route path="/service" element={<Services />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
+        
       </Routes>
     </>
   )

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import SignUpForm from '../components/Sign Up/SignUpForm'
 import SignupDisplay from '../components/Sign Up/SignupDisplay'
 
-const Login: React.FC = () => {
+const SignUp: React.FC = () => {
 
   useEffect(()=> {
     document.title = "Blugle - Sign Up"
@@ -19,4 +19,4 @@ const Login: React.FC = () => {
   )
 }
 
-export default Login
+export default SignUp

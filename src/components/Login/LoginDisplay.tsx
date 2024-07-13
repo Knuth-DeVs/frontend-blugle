@@ -5,6 +5,7 @@ import { BiArrowBack } from "react-icons/bi";
 
 
 const LoginDisplay: React.FC = () => {
+
   return (
     <div className='bg-[rgb(49,111,246)] h-[100vh] w-[550px] rounded-tr-3xl rounded-br-3xl'>
       <Link to='/'>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { BiArrowBack } from "react-icons/bi";
 import logo from '../../assets/logo.png'
@@ -6,6 +6,12 @@ import logo from '../../assets/logo.png'
 
 
 const SignUpForm: React.FC = () => {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
+  const [pwd, setPwd] = useState('')
+
+
   return (
     <div className='md:h-[100vh]'>
       <Link to='/'>
@@ -22,19 +28,19 @@ const SignUpForm: React.FC = () => {
             <div className='w-[330px] sm:w-[600px] lg:w-[400px]'>
             <div className='mt-2 mb-2'>
               <label className=''>Full Name</label><br/>
-              <input type='text' placeholder='Full name' className='border px-2 py-3 w-full outline-none rounded-lg' />
+              <input type='text' placeholder='Full name' className='border px-2 py-3 w-full outline-none rounded-lg' value={name} onChange={(e) => setName(e.target.value)} />
             </div>
             <div>
               <label className=''>Email</label><br />
-              <input type='email' placeholder='Email' className='border px-2 py-3 w-full outline-none rounded-lg'/>
+              <input type='email' placeholder='Email' className='border px-2 py-3 w-full outline-none rounded-lg' value={email} onChange={(e) => setEmail(e.target.value)}/>
             </div>
             <div className='mt-2 mb-4'>
               <label className=''>Phone Number</label><br/>
-              <input type='number' pattern='[0-9]+' placeholder='Phone Number' className='border px-2 py-3 w-full outline-none rounded-lg' />
+              <input type='number' pattern='[0-9]+' placeholder='Phone Number' className='border px-2 py-3 w-full outline-none rounded-lg' value={phone} onChange={(e) => setPhone(e.target.value)} />
             </div>
             <div>
               <label className=''>Password</label><br />
-              <input type='password' placeholder='Password' className='border px-2 py-3 w-full outline-none rounded-lg'/>
+              <input type='password' placeholder='Password' className='border px-2 py-3 w-full outline-none rounded-lg' value={pwd} onChange={(e) => setPwd(e.target.value)}/>
             </div>
             <div className='bg-navlinks py-2 px-3 mt-8 rounded-md text-center text-white cursor-pointer hover:scale-105 duration-300 ease-linear'>
               SIGN UP
