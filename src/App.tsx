@@ -3,9 +3,9 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Login from './pages/Login'
 import { Routes, Route } from 'react-router-dom'
-import SignUp from './pages/SignUp'
 import Contact from './pages/Contact'
 import Services from './pages/Services'
+import SignUp from './pages/SignUp'
 
 const App: React.FC = () => {
   return (
