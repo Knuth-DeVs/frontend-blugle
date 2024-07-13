@@ -7,6 +7,7 @@ import Hero from '../components/Home/Hero'
 import HeroBtn from '../components/Home/HeroBtn'
 import Navbar from '../components/Home/Navbar'
 import React, { useEffect } from 'react'
+import ParentComponent from '../components/Home/ParentComponent'
 
 const Home: React.FC = () => {
 
@@ -16,7 +17,7 @@ const Home: React.FC = () => {
   return (
     <div>
         <Navbar/>
-        <Hero/>
+        <ParentComponent/>
         <HeroBtn/>
         <Banner/>
         <DoctorInfo/>
