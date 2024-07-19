@@ -3,7 +3,7 @@ import Cartoon from '../../assets/cartton2.png'
 
 const SignupDisplay: React.FC = () => {
   return (
-    <div className='bg-[rgb(49,111,246)] h-[100vh] w-[550px] rounded-tl-3xl rounded-bl-3xl '>
+    <div className='bg-[rgb(49,111,246)] h-full w-[550px] rounded-tl-3xl rounded-bl-3xl '>
         <div className='text-center pt-6'>
             <h2 className='text-3xl font-bold text-white'>SIGN UP</h2>
             <h2 className='text-lg text-white'>Please provide your credentials</h2>

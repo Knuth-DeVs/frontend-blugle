@@ -16,7 +16,7 @@ const Hero: React.FC<HeroProps> = ({ onBookAppointment }) => {
             <p className='text-4xl md:text-[42px] leading-none lg:text-[50px] xl:text-6xl font-bold'>Rapid healthcare solutions in the fastest possible way</p>
             <Link to='/'>
             <button
-              className='border-2 border-white rounded-3xl py-1 px-2 lg:py-2 mt-6 lg:px-6 text-md lg:text-xl hover:scale-110 duration-300 ease-linear hover:bg-white hover:text-blue-500 hover:border-blue-500'
+              className='border-2 border-white bg-white rounded-3xl py-1 px-2 lg:py-2 mt-6 lg:px-6 text-md lg:text-xl hover:scale-110 duration-300 ease-linear text-navlinks hover:text-white hover:bg-[rgb(49,111,246)]'
               onClick={onBookAppointment}
             >
               Book Appointment

@@ -15,7 +15,7 @@ const SignUpForm: React.FC = () => {
   return (
     <div className='md:h-[100vh]'>
       <Link to='/'>
-        <BiArrowBack className='text-2xl text-blue-600 cursor-pointer lg:hidden m-3' />
+        <BiArrowBack className='text-2xl text-blue-600 cursor-pointer m-3' />
       </Link>
       <img src={logo} className='lg:hidden'/>
       <div className='w-full mx-4 sm:mx-16 lg:pl-10 md:mt-6  mt-3'>
