@@ -47,7 +47,7 @@ const LoginForm = () => {
               <label className=''>Password</label><br />
               <input type='password' placeholder='Password' value={pwd} onChange={(e) => setPwd(e.target.value)} className='border px-2 py-3 w-full outline-none rounded-lg'/>
             </div>
-            <Link to="/doctor">
+            <Link to="/doctor/dashboard">
             <div className='bg-navlinks py-2 px-3 mt-8 rounded-md text-center text-white cursor-pointer hover:scale-105 duration-300 ease-linear'>
               <button onClick = {handleLogin}>SIGN IN</button>
             </div>
