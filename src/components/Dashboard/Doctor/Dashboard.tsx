@@ -46,7 +46,7 @@ const Dashboard = () => {
             <p>Location</p>
             <p>Status</p>
         </div>
-        <div className="overflow-y-auto h-[195px] lg:h-[230px] scrollbar">
+        <div className="overflow-y-auto h-[195px] lg:h-[230px]">
         {
                 request.map((item, id) => {
                     return(

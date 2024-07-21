@@ -27,7 +27,7 @@ const Appointment: React.FC = () => {
         {
           data.map((item, id) => {
             return(
-              <div key={id} className='grid grid-cols-7 gap-2 mx-2 md:mx-6 md:p-3 border my-2 rounded-md shadow-sm'>
+              <div key={id} className='grid grid-cols-7 gap-2 mx-2 md:mx-6 md:p-3 border my-2 rounded-md shadow-sm bg-gray-200'>
                 <p className='font-bold'>#{item.id}</p>
                 <div>
                   <p>{item.name}</p>

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { IoMenu, IoSettings, IoTimeSharp } from "react-icons/io5";
+import { IoMenu } from "react-icons/io5";
 import { TbLayoutDashboardFilled } from 'react-icons/tb';
 import { FaBookMedical } from 'react-icons/fa';
 import { GrUserManager } from 'react-icons/gr';
@@ -7,6 +7,7 @@ import { AiFillMessage } from 'react-icons/ai';
 import { CgProfile } from 'react-icons/cg';
 import { BiLogOut } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
+import { FaSackDollar } from 'react-icons/fa6';
 
 
 const Sidebar = () => {
@@ -46,8 +47,8 @@ const Sidebar = () => {
             </Link>
             <Link to="/doctor/schedule">
               <div className="bg-white px-2 py-2 rounded-md text-navlinks active:bg-navlinks active:text-white cursor-pointer flex items-center gap-2">
-                <IoTimeSharp />
-                {extend ? <p className='hidden md:block'>Schedule</p> : null}
+                <FaSackDollar />
+                {extend ? <p className='hidden md:block'>Payments</p> : null}
               </div>
             </Link>
             <Link to="/doctor/profile">
@@ -59,10 +60,6 @@ const Sidebar = () => {
           </div>
           </div>
           <div className='flex flex-col items-center gap-2'>
-              <div className="bg-white px-2 py-2 rounded-md text-navlinks active:bg-navlinks active:text-white cursor-pointer flex items-center gap-2">
-                <IoSettings />
-                {extend ? <p className='hidden md:block'>Settings</p> : null}
-              </div>
               <Link to="/login">
                 <div className="bg-white px-2 py-2 rounded-md text-navlinks active:bg-navlinks active:text-white cursor-pointer flex items-center gap-2">
                   <BiLogOut />
