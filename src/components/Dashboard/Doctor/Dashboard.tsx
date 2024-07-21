@@ -17,19 +17,19 @@ const Dashboard = () => {
             <p>This is what is happening today</p>
         </div>
         <div className='grid grid-cols-2 md:grid-cols-4 mx-5 md:mx-10 xl:mx-20 gap-2 md:gap-8'>
-            <div className="bg-gradient-to-t from-blue-800 to-blue-500 p-2 md:p-4 md:w-full rounded-md">
+            <div className="bg-gradient-to-t from-blue-800 to-blue-500 p-2 md:p-4 md:w-full rounded-md shadow-xl">
                 <p className="text-white text-sm md:text-lg">Total Service Request</p>
                 <p className="md:text-4xl font-bold text-xl">000</p>
             </div>
-            <div className="bg-gradient-to-t from-blue-800 to-blue-500 md:w-full p-2 md:p-4 rounded-md">
+            <div className="bg-gradient-to-t from-blue-800 to-blue-500 md:w-full p-2 md:p-4 rounded-md shadow-xl">
                 <p className="text-white text-sm md:text-lg">Upcoming Appointments</p>
                 <p className="md:text-4xl font-bold text-xl">14</p>
             </div>
-            <div className="bg-gradient-to-t from-blue-800 to-blue-500 md:w-full p-2 md:p-4 rounded-md">
+            <div className="bg-gradient-to-t from-blue-800 to-blue-500 md:w-full p-2 md:p-4 rounded-md shadow-xl">
                 <p className="text-white text-sm md:text-lg">Total Service Request</p>
                 <p className="md:text-4xl font-bold text-xl">000</p>
             </div>
-            <div className="bg-gradient-to-t from-blue-800 to-blue-500 md:w-full p-2 md:p-4 rounded-md">
+            <div className="bg-gradient-to-t from-blue-800 to-blue-500 md:w-full p-2 md:p-4 rounded-md shadow-xl">
                 <p className="text-white text-sm md:text-lg">Total Service Request</p>
                 <p className="md:text-4xl font-bold text-xl">000</p>
             </div>
