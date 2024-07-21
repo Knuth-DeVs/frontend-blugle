@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Schedule: React.FC = () => {
+const Payment: React.FC = () => {
   return (
     <div className='flex flex-row'>
-       Schedule
+       Payment
     </div>
   )
 }
 
-export default Schedule
+export default Payment
