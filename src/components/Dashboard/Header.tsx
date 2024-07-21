@@ -18,7 +18,7 @@ interface HeaderProps {
   patients: Patient[];
 }
 
-const Header: React.FC<HeaderProps> = ({ searchQuery, setSearchQuery, patients }) => {
+const Header: React.FC<HeaderProps> = ({ searchQuery, setSearchQuery }) => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const { fullName } = useUser();
