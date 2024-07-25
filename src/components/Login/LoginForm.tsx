@@ -104,14 +104,15 @@ const LoginForm = () => {
                 className="border px-2 py-3 w-full outline-none rounded-lg"
               />
             </div>
-            <div className="bg-navlinks py-2 px-3 mt-8 rounded-md text-center text-white cursor-pointer hover:scale-105 duration-300 ease-linear">
+
+            <Link to="/doctor/dashboard">
+            <div className='bg-navlinks py-2 px-3 mt-8 rounded-md text-center text-white cursor-pointer hover:scale-105 duration-300 ease-linear'>
               <button onClick={handleLogin}>SIGN IN</button>
             </div>
-          </div>
-        </form>
-        <p className="pt-3 text-blue-500 cursor-pointer text-right ">
-          Forgot your password?
-        </p>
+            </Link>
+            </div>
+          </form> 
+          <p className='pt-3 text-blue-500 cursor-pointer text-right '>Forgot your password?</p>
       </div>
     </div>
   );
