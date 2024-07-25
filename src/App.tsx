@@ -32,9 +32,10 @@ const App: React.FC = () => {
           <Route path="payment" element={<Payment/>} />
           <Route path="profile" element={<Profile/>} />
         </Route>
+
       </Routes>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
