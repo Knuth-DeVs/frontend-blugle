@@ -3,12 +3,15 @@ import { Link, useNavigate } from 'react-router-dom';
 import { BiArrowBack } from "react-icons/bi";
 import logo from '../../assets/logo.png';
 import { useUser } from '../../context/UserContext';
+import { CgSpinner } from 'react-icons/cg';
 
 const SignUpForm: React.FC = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [pwd, setPwd] = useState('');
+  const [loading, setLoading] = useState(false)
+
   const { setFullName } = useUser();
   const navigate = useNavigate()
 
@@ -33,22 +36,26 @@ const SignUpForm: React.FC = () => {
           <div className='w-[330px] sm:w-[600px] lg:w-[400px]'>
             <div className='mt-2 mb-2'>
               <label>Full Name</label><br/>
-              <input type='text' placeholder='Full name' className='border px-2 py-3 w-full outline-none rounded-lg' value={name} onChange={(e) => setName(e.target.value)} />
+              <input type='text' required placeholder='Full name' className='border px-2 py-3 w-full outline-none rounded-lg' value={name} onChange={(e) => setName(e.target.value)} />
             </div>
             <div>
               <label>Email</label><br />
-              <input type='email' placeholder='Email' className='border px-2 py-3 w-full outline-none rounded-lg' value={email} onChange={(e) => setEmail(e.target.value)}/>
+              <input type='email' required placeholder='Email' className='border px-2 py-3 w-full outline-none rounded-lg' value={email} onChange={(e) => setEmail(e.target.value)}/>
             </div>
             <div className='mt-2 mb-4'>
               <label>Phone Number</label><br/>
-              <input type='number' pattern='[0-9]+' placeholder='Phone Number' className='border px-2 py-3 w-full outline-none rounded-lg' value={phone} onChange={(e) => setPhone(e.target.value)} />
+              <input type='number' required pattern='[0-9]+' placeholder='Phone Number' className='border px-2 py-3 w-full outline-none rounded-lg' value={phone} onChange={(e) => setPhone(e.target.value)} />
             </div>
             <div>
               <label>Password</label><br />
-              <input type='password' placeholder='Password' className='border px-2 py-3 w-full outline-none rounded-lg' value={pwd} onChange={(e) => setPwd(e.target.value)}/>
+              <input type='password' required placeholder='Password' className='border px-2 py-3 w-full outline-none rounded-lg' value={pwd} onChange={(e) => setPwd(e.target.value)}/>
             </div>
-            <div onClick={handleSignUp} className='bg-navlinks py-2 px-3 mt-8 rounded-md text-center text-white cursor-pointer hover:scale-105 duration-300 ease-linear'>
+            <div onClick={handleSignUp}>
+            <div onClick={()=> setLoading(true)} className='bg-navlinks flex items-center justify-center gap-2 py-2 px-3 mt-8 rounded-md text-center text-white cursor-pointer hover:scale-105 duration-300 ease-linear'>
+            {loading &&
+                  <CgSpinner size={30} className="animate-spin"/>}
               SIGN UP
+            </div>
             </div>
           </div>
         </form>

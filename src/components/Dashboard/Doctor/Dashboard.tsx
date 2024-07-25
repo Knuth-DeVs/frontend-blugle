@@ -25,7 +25,7 @@ const Dashboard: React.FC = () => {
   return (
     <div className="w-[100%]">
       <div className='mx-2 md:mx-6 py-2 md:py-5'>
-        <h1 className='text-2xl font-bold'>Hello {fullName || "John"}</h1>
+        <h1 className='text-2xl font-bold'>Hello Dr. {fullName || "John"}</h1>
         <p>This is what is happening today</p>
       </div>
       <div className='grid grid-cols-2 md:grid-cols-4 mx-5 md:mx-10 xl:mx-20 gap-2 md:gap-8'>
