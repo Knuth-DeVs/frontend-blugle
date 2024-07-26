@@ -45,9 +45,10 @@ const App: React.FC = () => {
           <Route path="doctors" element={<Doctors/>} />
           <Route path="payment" element={<PaymentP/>} />
         </Route>
+
       </Routes>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
