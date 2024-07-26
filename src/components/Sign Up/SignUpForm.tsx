@@ -4,8 +4,10 @@ import axios from "axios";
 import { Link, useNavigate } from 'react-router-dom';
 import { BiArrowBack } from "react-icons/bi";
 import { useUser } from '../../context/UserContext';
+import { CgSpinner } from 'react-icons/cg';
 
 const SignUpForm: React.FC = () => {
+
   const [name, setName] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -13,6 +15,7 @@ const SignUpForm: React.FC = () => {
   const [phone, setPhone] = useState("");
   const [pwd, setPwd] = useState("");
   const [address, setAddress] = useState("");
+
   const { setFullName } = useUser();
 
   // const [existingUserMessage, setExistingUserMessage] = useState("");
@@ -185,6 +188,7 @@ const SignUpForm: React.FC = () => {
               <button type="submit" onClick={handleSubmit}>
                 SIGN UP
               </button>
+            </div>
             </div>
           </div>
         </form>

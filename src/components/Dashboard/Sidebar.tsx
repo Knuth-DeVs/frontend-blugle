@@ -20,7 +20,7 @@ const Sidebar = () => {
             <div className='flex flex-col items-center justify-between -mt-32'>
                 <div className='text-white flex flex-col gap-2'>
                     <NavLink
-                        to="/doctor/dashboard"
+                        to="/patient/dashboard"
                         className={({ isActive }) =>
                             `px-2 py-2 rounded-md text-navlinks cursor-pointer flex items-center gap-2 ${isActive ? 'bg-navlinks text-white' : 'bg-white'}`
                         }
@@ -29,7 +29,7 @@ const Sidebar = () => {
                         {extend ? <p className='hidden md:block'>Dashboard</p> : null}
                     </NavLink>
                     <NavLink
-                        to="/doctor/appointment"
+                        to="/patient/appointment"
                         className={({ isActive }) =>
                             `px-2 py-2 rounded-md text-navlinks cursor-pointer flex items-center gap-2 ${isActive ? 'bg-navlinks text-white' : 'bg-white'}`
                         }
@@ -38,7 +38,7 @@ const Sidebar = () => {
                         {extend ? <p className='hidden md:block'>Appointments</p> : null}
                     </NavLink>
                     <NavLink
-                        to="/doctor/patients"
+                        to="/patient/doctors"
                         className={({ isActive }) =>
                             `px-2 py-2 rounded-md text-navlinks cursor-pointer flex items-center gap-2 ${isActive ? 'bg-navlinks text-white' : 'bg-white'}`
                         }
@@ -47,7 +47,7 @@ const Sidebar = () => {
                         {extend ? <p className='hidden md:block'>Patients</p> : null}
                     </NavLink>
                     <NavLink
-                        to="/doctor/notifications"
+                        to="/patient/notifications"
                         className={({ isActive }) =>
                             `px-2 py-2 rounded-md text-navlinks cursor-pointer flex items-center gap-2 ${isActive ? 'bg-navlinks text-white' : 'bg-white'}`
                         }
@@ -56,7 +56,7 @@ const Sidebar = () => {
                         {extend ? <p className='hidden md:block'>Notifications</p> : null}
                     </NavLink>
                     <NavLink
-                        to="/doctor/payment"
+                        to="/patient/payment"
                         className={({ isActive }) =>
                             `px-2 py-2 rounded-md text-navlinks cursor-pointer flex items-center gap-2 ${isActive ? 'bg-navlinks text-white' : 'bg-white'}`
                         }
@@ -65,7 +65,7 @@ const Sidebar = () => {
                         {extend ? <p className='hidden md:block'>Payments</p> : null}
                     </NavLink>
                     <NavLink
-                        to="/doctor/profile"
+                        to="/patient/profile"
                         className={({ isActive }) =>
                             `px-2 py-2 rounded-md text-navlinks cursor-pointer flex items-center gap-2 ${isActive ? 'bg-navlinks text-white' : 'bg-white'}`
                         }
