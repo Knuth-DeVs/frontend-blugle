@@ -38,7 +38,7 @@ const LoginForm = () => {
         console.log(response.data.message); //placeholder message
       } else {
         //handle success status 200 from the server
-        if (response.status === 200) {
+        if (response.status === 200 && response.data.userRole === "patient") {
           //store token directly from response
           const token = response.data.token;
           const userRole = response.data.userRole;
@@ -105,9 +105,12 @@ const LoginForm = () => {
                 className="border px-2 py-3 w-full outline-none rounded-lg"
               />
             </div>
-            <div className="bg-navlinks py-2 px-3 mt-8 rounded-md text-center text-white cursor-pointer hover:scale-105 duration-300 ease-linear">
-              <button onClick={handleLogin}>SIGN IN</button>
-            </div>
+
+            <Link to="/doctor/dashboard">
+              <div className="bg-navlinks py-2 px-3 mt-8 rounded-md text-center text-white cursor-pointer hover:scale-105 duration-300 ease-linear">
+                <button onClick={handleLogin}>SIGN IN</button>
+              </div>
+            </Link>
           </div>
         </form>
         <p className="pt-3 text-blue-500 cursor-pointer text-right ">

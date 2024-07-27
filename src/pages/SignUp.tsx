@@ -7,6 +7,8 @@ const SignUp: React.FC = () => {
   useEffect(()=> {
     document.title = "Blugle - Sign Up"
   })
+
+  
   return (
     <div className='flex md:flex-row md:items-center md:justify-between overflow-hidden'>
       <div>

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { BiArrowBack } from "react-icons/bi";
 import logo from "../../assets/logo.png";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from 'react-router-dom';
+import { BiArrowBack } from "react-icons/bi";
+// import { useUser } from '../../context/UserContext';
 
 const SignUpForm: React.FC = () => {
   const [name, setName] = useState("");
@@ -13,6 +13,7 @@ const SignUpForm: React.FC = () => {
   const [phone, setPhone] = useState("");
   const [pwd, setPwd] = useState("");
   const [address, setAddress] = useState("");
+  // const { setFullName } = useUser();
 
   // const [existingUserMessage, setExistingUserMessage] = useState("");
 
@@ -65,6 +66,11 @@ const SignUpForm: React.FC = () => {
       console.error(error);
     }
   };
+  
+  // const handleSignUp = () => {
+  //   navigate('/doctor/dashboard')
+  //   setFullName(name);
+  // };
 
   return (
     <div className="md:h-[100vh]">
@@ -189,5 +195,6 @@ const SignUpForm: React.FC = () => {
     </div>
   );
 };
+
 
 export default SignUpForm;
