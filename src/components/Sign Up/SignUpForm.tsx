@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
 import logo from "../../assets/logo.png";
 import axios from "axios";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const SignUpForm: React.FC = () => {
   const [name, setName] = useState("");
@@ -17,7 +17,7 @@ const SignUpForm: React.FC = () => {
   // const [existingUserMessage, setExistingUserMessage] = useState("");
 
   //useNavigate method
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   //request body to send to api
   const reqBody = {
@@ -57,10 +57,10 @@ const SignUpForm: React.FC = () => {
       if (response?.status === 500) {
         console.log(responseBody.message); //placeholder statement
       }
-      //handle success status 200 from the server
-      // if (response.status === 200) {
-      //   console.log("The send was successful");
-      // }
+      // handle success status 200 from the server
+      if (response.status === 200) {
+        navigate("/login");
+      }
     } catch (error) {
       console.error(error);
     }

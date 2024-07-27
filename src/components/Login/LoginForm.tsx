@@ -41,10 +41,11 @@ const LoginForm = () => {
         if (response.status === 200) {
           //store token directly from response
           const token = response.data.token;
-          localStorage.setItem("tokenAccess", JSON.stringify(token));
-          console.log(JSON.parse(token));
-          navigate("/");
+          const userRole = response.data.userRole;
           console.log("You have signed up successfully");
+          console.log(userRole);
+          navigate("/");
+          localStorage.setItem("accessToken", JSON.stringify(token));
         }
       }
       //handle catch exceptions from the server
