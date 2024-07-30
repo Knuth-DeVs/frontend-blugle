@@ -1,4 +1,4 @@
-import { Logout } from "@mui/icons-material";
+// import { Logout } from "@mui/icons-material";
 import { Avatar, Badge, Box, IconButton, ListItemIcon, Menu, MenuItem, Tooltip } from "@mui/material";
 import React from "react";
 import { IoMdSearch } from "react-icons/io";
@@ -128,7 +128,7 @@ const Header: React.FC<HeaderProps> = ({ searchQuery, setSearchQuery }) => {
           <Link to="/login">
             <MenuItem onClick={handleClose}>
               <ListItemIcon>
-                <Logout fontSize="small" />
+                {/* <Logout fontSize="small" /> */}
               </ListItemIcon>
               Logout
             </MenuItem>

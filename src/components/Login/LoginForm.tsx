@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import logo from "../../assets/logo.png";
+import { logo } from "../../assets/images";
 import { BiArrowBack } from "react-icons/bi";
 import { CgSpinner } from 'react-icons/cg';
 
@@ -41,13 +41,36 @@ const LoginForm = () => {
         console.log(response.data.message); //placeholder message
       } else {
         //handle success status 200 from the server
-        if (response.status === 200) {
+        if (response.status === 200 && response.data.userRole === "patient") {
           //store token directly from response
           const token = response.data.token;
-          localStorage.setItem("tokenAccess", JSON.stringify(token));
-          console.log(JSON.parse(token));
-          navigate("/");
+          const userRole = response.data.userRole;
           console.log("You have signed up successfully");
+          console.log(userRole);
+          navigate("/");
+          localStorage.setItem("accessToken", JSON.stringify(token));
+        } else if (
+          response.status === 200 &&
+          response.data.userRole === "doctor"
+        ) {
+          //store token directly from response
+          const token = response.data.token;
+          const userRole = response.data.userRole;
+          console.log("You have signed up successfully");
+          console.log(userRole);
+          navigate("/doctor/dashboard");
+          localStorage.setItem("accessToken", JSON.stringify(token));
+        } else if (
+          response.status === 200 &&
+          response.data.userRole === "admin"
+        ) {
+          //store token directly from response
+          const token = response.data.token;
+          const userRole = response.data.userRole;
+          console.log("You have signed up successfully");
+          console.log(userRole);
+          navigate("/doctor/dashboard");
+          localStorage.setItem("accessToken", JSON.stringify(token));
         }
       }
       //handle catch exceptions from the server
@@ -107,7 +130,6 @@ const LoginForm = () => {
                 className="border px-2 py-3 w-full outline-none rounded-lg"
               />
             </div>
-
             <div onClick={handleLogin}>
               <div onClick={()=> setLoading(true)} className='bg-navlinks py-2 px-3 mt-8 rounded-md flex gap-2 items-center justify-center text-center text-white cursor-pointer hover:scale-105 duration-300 ease-linear'>
               {loading &&

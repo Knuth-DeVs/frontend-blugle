@@ -16,6 +16,13 @@ const SignUpForm: React.FC = () => {
   const [pwd, setPwd] = useState("");
   const [address, setAddress] = useState("");
 
+  // const { setFullName } = useUser();
+
+  // const [existingUserMessage, setExistingUserMessage] = useState("");
+
+  //useNavigate method
+
+
   const { setFullName } = useUser();
   const navigate = useNavigate();
 
@@ -58,10 +65,21 @@ const SignUpForm: React.FC = () => {
         setFullName(name);
         navigate('/doctor/dashboard');
       }
+      // handle success status 200 from the server
+      if (response.status === 200) {
+        navigate("/login");
+      }
     } catch (error) {
       console.error(error);
     }
   };
+
+  
+  // const handleSignUp = () => {
+  //   navigate('/doctor/dashboard')
+  //   setFullName(name);
+  // };
+
 
   return (
     <div className="">
