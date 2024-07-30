@@ -13,6 +13,12 @@ import Payment from './components/Dashboard/Doctor/Payment'
 import Profile from './components/Dashboard/Doctor/Profile'
 import Doctor from './pages/Doctor'
 import Dashboard from './components/Dashboard/Doctor/Dashboard'
+import Patient from './pages/Patient'
+import DashboardP from './components/Dashboard/Patient/Dashboard'
+import AppointmentP from './components/Dashboard/Patient/Appointment'
+import Notification from './components/Dashboard/Patient/Notification'
+import Doctors from './components/Dashboard/Patient/Doctors'
+import PaymentP from './components/Dashboard/Patient/Payment'
 
 const App: React.FC = () => {
   return (
@@ -27,10 +33,17 @@ const App: React.FC = () => {
         <Route path="/doctor" element={<Doctor/>}>
           <Route path="dashboard" element={<Dashboard/>} />
           <Route path="appointment" element={<Appointment/>} />
-          <Route path="messages" element={<Messages/>} />
+          <Route path="notifications" element={<Messages/>} />
           <Route path="patients" element={<Patients/>} />
           <Route path="payment" element={<Payment/>} />
           <Route path="profile" element={<Profile/>} />
+        </Route>
+        <Route path="/patient" element={<Patient/>}>
+          <Route path="dashboard" element={<DashboardP/>} />
+          <Route path="appointment" element={<AppointmentP/>} />
+          <Route path="notifications" element={<Notification/>} />
+          <Route path="doctors" element={<Doctors/>} />
+          <Route path="payment" element={<PaymentP/>} />
         </Route>
 
       </Routes>

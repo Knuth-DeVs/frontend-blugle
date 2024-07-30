@@ -3,9 +3,11 @@ import logo from "../../assets/logo.png";
 import axios from "axios";
 import { Link, useNavigate } from 'react-router-dom';
 import { BiArrowBack } from "react-icons/bi";
-// import { useUser } from '../../context/UserContext';
+import { useUser } from '../../context/UserContext';
+// import { CgSpinner } from 'react-icons/cg';
 
 const SignUpForm: React.FC = () => {
+
   const [name, setName] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -13,14 +15,18 @@ const SignUpForm: React.FC = () => {
   const [phone, setPhone] = useState("");
   const [pwd, setPwd] = useState("");
   const [address, setAddress] = useState("");
+
   // const { setFullName } = useUser();
 
   // const [existingUserMessage, setExistingUserMessage] = useState("");
 
   //useNavigate method
+
+
+  const { setFullName } = useUser();
   const navigate = useNavigate();
 
-  //request body to send to api
+  // request body to send to API
   const reqBody = {
     userFirstName: firstName,
     userLastName: lastName,
@@ -31,11 +37,11 @@ const SignUpForm: React.FC = () => {
     userAddress: address,
   };
 
-  //api call to the signup endpoint
+  // API call to the signup endpoint
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      //post request to the api for sign up
+      // Post request to the API for sign up
       const response = await axios.post(
         "http://localhost:5000/api/signup",
         reqBody,
@@ -45,18 +51,19 @@ const SignUpForm: React.FC = () => {
           },
         }
       );
-      //get responses from the server
+      // Get responses from the server
       const responseBody = response?.data;
-      //handle error 400 status from the server
+      // Handle different server response statuses
       if (response?.status === 400) {
-        console.log(responseBody.message); //placeholder statement
-      }
-      if (response?.status === 409) {
-        console.log(responseBody.existingUserMessage); //placeholder statement
-      }
-      // handle error 500 status from the server
-      if (response?.status === 500) {
-        console.log(responseBody.message); //placeholder statement
+        console.log(responseBody.message); // placeholder statement
+      } else if (response?.status === 409) {
+        console.log(responseBody.existingUserMessage); // placeholder statement
+      } else if (response?.status === 500) {
+        console.log(responseBody.message); // placeholder statement
+      } else if (response.status === 200) {
+        console.log("The send was successful");
+        setFullName(name);
+        navigate('/doctor/dashboard');
       }
       // handle success status 200 from the server
       if (response.status === 200) {
@@ -66,11 +73,13 @@ const SignUpForm: React.FC = () => {
       console.error(error);
     }
   };
+
   
   // const handleSignUp = () => {
   //   navigate('/doctor/dashboard')
   //   setFullName(name);
   // };
+
 
   return (
     <div className="md:h-[100vh]">
@@ -78,8 +87,10 @@ const SignUpForm: React.FC = () => {
         <BiArrowBack className="text-2xl text-blue-600 cursor-pointer lg:hidden m-3" />
       </Link>
       <img src={logo} className="lg:hidden" />
-      <div className="w-full mx-4 sm:mx-16 lg:pl-10 md:mt-6  mt-3">
-        <div>{/* <p>{existingUserMessage}</p> */}</div>
+      <div className="w-full mx-4 sm:mx-16 lg:pl-10 md:mt-6 mt-3">
+        <div>
+          {/* <p>{existingUserMessage}</p> */}
+        </div>
         <div>
           <h2 className="text-lg md:text-xl uppercase ">REGISTER</h2>
           <p className="text-4xl md:text-5xl font-bold pt-2">
@@ -92,7 +103,7 @@ const SignUpForm: React.FC = () => {
             </span>
           </p>
         </div>
-        <form action="http://localhost:5000" method="POST">
+        <form onSubmit={handleSubmit}>
           <div className="w-[330px] sm:w-[600px] lg:w-[400px]">
             <div className="mt-2 mb-2">
               <label className="">First Name</label>
@@ -180,7 +191,7 @@ const SignUpForm: React.FC = () => {
               />
             </div>
             <div className="bg-navlinks py-2 px-3 mt-8 rounded-md text-center text-white cursor-pointer hover:scale-105 duration-300 ease-linear">
-              <button type="submit" onClick={handleSubmit}>
+              <button type="submit">
                 SIGN UP
               </button>
             </div>
@@ -188,13 +199,12 @@ const SignUpForm: React.FC = () => {
         </form>
       </div>
       <p className="pt-3 cursor-pointer text-center lg:pl-20 font-semibold px-2">
-        By submitting your information,you agree to our{" "}
+        By submitting your information, you agree to our{" "}
         <span className="text-navlinkshover">Privacy Policy</span> and{" "}
         <span className="text-navlinkshover">Terms of use</span>
       </p>
     </div>
   );
 };
-
 
 export default SignUpForm;

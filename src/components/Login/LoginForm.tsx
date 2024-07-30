@@ -3,9 +3,12 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { logo } from "../../assets/images";
 import { BiArrowBack } from "react-icons/bi";
+import { CgSpinner } from 'react-icons/cg';
+
 import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
+  const [loading, setLoading] = useState(false)
   const navigate = useNavigate();
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
@@ -127,17 +130,16 @@ const LoginForm = () => {
                 className="border px-2 py-3 w-full outline-none rounded-lg"
               />
             </div>
-
-            <Link to="/doctor/dashboard">
-              <div className="bg-navlinks py-2 px-3 mt-8 rounded-md text-center text-white cursor-pointer hover:scale-105 duration-300 ease-linear">
-                <button onClick={handleLogin}>SIGN IN</button>
+            <div onClick={handleLogin}>
+              <div onClick={()=> setLoading(true)} className='bg-navlinks py-2 px-3 mt-8 rounded-md flex gap-2 items-center justify-center text-center text-white cursor-pointer hover:scale-105 duration-300 ease-linear'>
+              {loading &&
+                    <CgSpinner size={30} className="animate-spin"/>}
+                SIGN IN
               </div>
-            </Link>
-          </div>
-        </form>
-        <p className="pt-3 text-blue-500 cursor-pointer text-right ">
-          Forgot your password?
-        </p>
+            </div>
+            </div>
+          </form> 
+          <p className='pt-3 text-blue-500 cursor-pointer text-right '>Forgot your password?</p>
       </div>
     </div>
   );
