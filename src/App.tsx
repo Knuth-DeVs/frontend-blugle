@@ -19,6 +19,7 @@ import AppointmentP from './components/Dashboard/Patient/Appointment'
 import Notification from './components/Dashboard/Patient/Notification'
 import Doctors from './components/Dashboard/Patient/Doctors'
 import PaymentP from './components/Dashboard/Patient/Payment'
+import SuperAdminPage from './pages/SuperAdmin'
 
 const App: React.FC = () => {
   return (
@@ -45,7 +46,7 @@ const App: React.FC = () => {
           <Route path="doctors" element={<Doctors/>} />
           <Route path="payment" element={<PaymentP/>} />
         </Route>
-
+        <Route path='/admin' element={<SuperAdminPage/>}/>
       </Routes>
     </>
   );

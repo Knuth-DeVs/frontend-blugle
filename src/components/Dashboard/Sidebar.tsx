@@ -44,7 +44,7 @@ const Sidebar = () => {
                         }
                     >
                         <GrUserManager />
-                        {extend ? <p className='hidden md:block'>Patients</p> : null}
+                        {extend ? <p className='hidden md:block'>Doctors</p> : null}
                     </NavLink>
                     <NavLink
                         to="/patient/notifications"

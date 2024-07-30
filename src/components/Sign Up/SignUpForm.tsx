@@ -4,10 +4,8 @@ import axios from "axios";
 import { Link, useNavigate } from 'react-router-dom';
 import { BiArrowBack } from "react-icons/bi";
 import { useUser } from '../../context/UserContext';
-// import { CgSpinner } from 'react-icons/cg';
 
 const SignUpForm: React.FC = () => {
-
   const [name, setName] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -15,18 +13,9 @@ const SignUpForm: React.FC = () => {
   const [phone, setPhone] = useState("");
   const [pwd, setPwd] = useState("");
   const [address, setAddress] = useState("");
-
-  // const { setFullName } = useUser();
-
-  // const [existingUserMessage, setExistingUserMessage] = useState("");
-
-  //useNavigate method
-
-
   const { setFullName } = useUser();
   const navigate = useNavigate();
 
-  // request body to send to API
   const reqBody = {
     userFirstName: firstName,
     userLastName: lastName,
@@ -37,11 +26,9 @@ const SignUpForm: React.FC = () => {
     userAddress: address,
   };
 
-  // API call to the signup endpoint
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      // Post request to the API for sign up
       const response = await axios.post(
         "http://localhost:5000/api/signup",
         reqBody,
@@ -51,46 +38,30 @@ const SignUpForm: React.FC = () => {
           },
         }
       );
-      // Get responses from the server
-      const responseBody = response?.data;
-      // Handle different server response statuses
-      if (response?.status === 400) {
-        console.log(responseBody.message); // placeholder statement
-      } else if (response?.status === 409) {
-        console.log(responseBody.existingUserMessage); // placeholder statement
-      } else if (response?.status === 500) {
-        console.log(responseBody.message); // placeholder statement
+
+      if (response.status === 400) {
+        console.log(response.data.message);
+      } else if (response.status === 409) {
+        console.log(response.data.existingUserMessage);
+      } else if (response.status === 500) {
+        console.log(response.data.message);
       } else if (response.status === 200) {
         console.log("The send was successful");
         setFullName(name);
         navigate('/doctor/dashboard');
-      }
-      // handle success status 200 from the server
-      if (response.status === 200) {
-        navigate("/login");
       }
     } catch (error) {
       console.error(error);
     }
   };
 
-  
-  // const handleSignUp = () => {
-  //   navigate('/doctor/dashboard')
-  //   setFullName(name);
-  // };
-
-
   return (
-    <div className="md:h-[100vh]">
+    <div className="">
       <Link to="/">
         <BiArrowBack className="text-2xl text-blue-600 cursor-pointer lg:hidden m-3" />
       </Link>
       <img src={logo} className="lg:hidden" />
       <div className="w-full mx-4 sm:mx-16 lg:pl-10 md:mt-6 mt-3">
-        <div>
-          {/* <p>{existingUserMessage}</p> */}
-        </div>
         <div>
           <h2 className="text-lg md:text-xl uppercase ">REGISTER</h2>
           <p className="text-4xl md:text-5xl font-bold pt-2">
@@ -190,11 +161,9 @@ const SignUpForm: React.FC = () => {
                 onChange={(e) => setPwd(e.target.value)}
               />
             </div>
-            <div className="bg-navlinks py-2 px-3 mt-8 rounded-md text-center text-white cursor-pointer hover:scale-105 duration-300 ease-linear">
-              <button type="submit">
-                SIGN UP
-              </button>
-            </div>
+            <button type="submit" className="bg-navlinks py-2 px-3 mt-8 rounded-md text-center text-white cursor-pointer hover:scale-105 duration-300 ease-linear">
+              SIGN UP
+            </button>
           </div>
         </form>
       </div>
