@@ -23,7 +23,7 @@ const records = [
 ]
 
 const DashboardP: React.FC = () => {
-  const [value, onChange] = useState<Value>(new Date());
+  const [, onChange] = useState<Value>(new Date());
 
   return (
     <div className='overflow-y-auto h-[87vh] '>
