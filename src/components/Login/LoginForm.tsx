@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import logo from "../../assets/logo.png";
+import { logo } from "../../assets/images";
 import { BiArrowBack } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 
@@ -45,6 +45,28 @@ const LoginForm = () => {
           console.log("You have signed up successfully");
           console.log(userRole);
           navigate("/");
+          localStorage.setItem("accessToken", JSON.stringify(token));
+        } else if (
+          response.status === 200 &&
+          response.data.userRole === "doctor"
+        ) {
+          //store token directly from response
+          const token = response.data.token;
+          const userRole = response.data.userRole;
+          console.log("You have signed up successfully");
+          console.log(userRole);
+          navigate("/doctor/dashboard");
+          localStorage.setItem("accessToken", JSON.stringify(token));
+        } else if (
+          response.status === 200 &&
+          response.data.userRole === "admin"
+        ) {
+          //store token directly from response
+          const token = response.data.token;
+          const userRole = response.data.userRole;
+          console.log("You have signed up successfully");
+          console.log(userRole);
+          navigate("/doctor/dashboard");
           localStorage.setItem("accessToken", JSON.stringify(token));
         }
       }
