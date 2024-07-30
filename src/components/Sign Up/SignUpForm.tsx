@@ -30,7 +30,7 @@ const SignUpForm: React.FC = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://blugle-backend-fork.vercel.app",
+        "https://blugle-backend-fork.vercel.app/",
         reqBody,
         {
           headers: {
@@ -48,7 +48,7 @@ const SignUpForm: React.FC = () => {
       } else if (response.status === 200) {
         console.log("The send was successful");
         setFullName(name);
-        navigate('/doctor/dashboard');
+        navigate('/patient/dashboard');
       }
     } catch (error) {
       console.error(error);
@@ -74,7 +74,7 @@ const SignUpForm: React.FC = () => {
             </span>
           </p>
         </div>
-        <form onSubmit={handleSubmit} method="POST" action="https://blugle-backend-fork.vercel.app">
+        <form onSubmit={handleSubmit} method="POST" action="https://blugle-backend-fork.vercel.app/">
           <div className="w-[330px] sm:w-[600px] lg:w-[400px]">
             <div className="mt-2 mb-2">
               <label className="">First Name</label>
