@@ -64,7 +64,7 @@ const SignUpForm: React.FC = () => {
   };
 
   return (
-    <div className="md:h-[100vh]">
+    <div className="">
       <Link to="/">
         <BiArrowBack className="text-2xl text-blue-600 cursor-pointer lg:hidden m-3" />
       </Link>
@@ -172,11 +172,13 @@ const SignUpForm: React.FC = () => {
                 onChange={(e) => setPwd(e.target.value)}
               />
             </div>
+            <Link to="/doctor/dashboard">
             <div className="bg-navlinks py-2 px-3 mt-8 rounded-md text-center text-white cursor-pointer hover:scale-105 duration-300 ease-linear">
               <button type="submit">
                 SIGN UP
               </button>
             </div>
+            </Link>
           </div>
         </form>
       </div>
