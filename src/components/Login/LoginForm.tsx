@@ -19,7 +19,7 @@ const LoginForm = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/login",
+        "https://www.blugle-backend-fork.vercel.app",
         reqBody,
         {
           headers: {
@@ -66,7 +66,7 @@ const LoginForm = () => {
             </span>
           </p>
         </div>
-        <form onSubmit={handleLogin}>
+        <form onSubmit={handleLogin} method = 'POST' action = "https://www.blugle-backend-fork.vercel.app">
           <div>
             <div className="mt-7 mb-4">
               <label htmlFor="user-email" id="user-email">

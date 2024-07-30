@@ -30,7 +30,7 @@ const SignUpForm: React.FC = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/signup",
+        "https://blugle-backend-fork.vercel.app",
         reqBody,
         {
           headers: {
@@ -74,7 +74,7 @@ const SignUpForm: React.FC = () => {
             </span>
           </p>
         </div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} method="POST" action="https://blugle-backend-fork.vercel.app">
           <div className="w-[330px] sm:w-[600px] lg:w-[400px]">
             <div className="mt-2 mb-2">
               <label className="">First Name</label>
@@ -161,7 +161,7 @@ const SignUpForm: React.FC = () => {
                 onChange={(e) => setPwd(e.target.value)}
               />
             </div>
-            <button type="submit" className="bg-navlinks py-2 px-3 mt-8 rounded-md text-center text-white cursor-pointer hover:scale-105 duration-300 ease-linear">
+            <button onClick={handleSubmit} type="submit" className="bg-navlinks py-2 px-3 mt-8 rounded-md text-center text-white cursor-pointer hover:scale-105 duration-300 ease-linear">
               SIGN UP
             </button>
           </div>
