@@ -1,6 +1,5 @@
-// import { Logout } from "@mui/icons-material";
-import { Avatar, Badge, Box, IconButton, ListItemIcon, Menu, MenuItem, Tooltip } from "@mui/material";
 import React from "react";
+import { Avatar, Badge, Box, IconButton, ListItemIcon, Menu, MenuItem, Tooltip } from "@mui/material";
 import { IoMdSearch } from "react-icons/io";
 import { IoNotifications } from "react-icons/io5";
 import { Link } from "react-router-dom";
@@ -9,7 +8,6 @@ import { useUser } from "../../context/UserContext";
 interface Patient {
   name: string;
   location: string;
-  // Add other patient properties here
 }
 
 interface HeaderProps {
@@ -123,7 +121,7 @@ const Header: React.FC<HeaderProps> = ({ searchQuery, setSearchQuery }) => {
           anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
         >
           <MenuItem onClick={handleClose}>
-            <Avatar {...stringAvatar(fullName || "User")} /> Profile
+            <Avatar {...stringAvatar(fullName || "User")} /> {fullName || "Profile"}
           </MenuItem>
           <Link to="/login">
             <MenuItem onClick={handleClose}>

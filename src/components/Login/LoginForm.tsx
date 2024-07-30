@@ -1,30 +1,23 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { logo } from "../../assets/images";
 import { BiArrowBack } from "react-icons/bi";
 import { CgSpinner } from 'react-icons/cg';
-
-import { useNavigate } from "react-router-dom";
+import { useUser } from '../../context/UserContext';
 
 const LoginForm = () => {
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
-  // const [responses, setResponses] = useState("");
-  // const [accessToken, setAccessToken] = useState("");
-
-  //request body
+  const { setFullName } = useUser();
   const reqBody = { userEmail, userPassword };
 
-  // const accessToken = localStorage.getItem("accessToken");
-  // console.log(accessToken);
-  //handle login function to the api
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
     try {
-      //axios post to the login api
       const response = await axios.post(
         "http://localhost:5000/api/login",
         reqBody,
@@ -34,48 +27,23 @@ const LoginForm = () => {
           },
         }
       );
-      //get responses from the server
 
-      //handle error 400 status from the server
-      if (response.status === 400) {
-        console.log(response.data.message); //placeholder message
-      } else {
-        //handle success status 200 from the server
-        if (response.status === 200 && response.data.userRole === "patient") {
-          //store token directly from response
-          const token = response.data.token;
-          const userRole = response.data.userRole;
-          console.log("You have signed up successfully");
-          console.log(userRole);
+      if (response.status === 200) {
+        const { token, userRole, fullName } = response.data;
+        setFullName(fullName);
+        localStorage.setItem("accessToken", JSON.stringify(token));
+        if (userRole === "doctor" || userRole === "admin") {
+          navigate("/doctor/dashboard");
+        } else {
           navigate("/");
-          localStorage.setItem("accessToken", JSON.stringify(token));
-        } else if (
-          response.status === 200 &&
-          response.data.userRole === "doctor"
-        ) {
-          //store token directly from response
-          const token = response.data.token;
-          const userRole = response.data.userRole;
-          console.log("You have signed up successfully");
-          console.log(userRole);
-          navigate("/doctor/dashboard");
-          localStorage.setItem("accessToken", JSON.stringify(token));
-        } else if (
-          response.status === 200 &&
-          response.data.userRole === "admin"
-        ) {
-          //store token directly from response
-          const token = response.data.token;
-          const userRole = response.data.userRole;
-          console.log("You have signed up successfully");
-          console.log(userRole);
-          navigate("/doctor/dashboard");
-          localStorage.setItem("accessToken", JSON.stringify(token));
         }
+      } else {
+        console.log(response.data.message);
       }
-      //handle catch exceptions from the server
     } catch (error) {
-      console.error(error);
+      console.error("Login error:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -98,10 +66,10 @@ const LoginForm = () => {
             </span>
           </p>
         </div>
-        <form action="http://localhost:5000" method="POST">
+        <form onSubmit={handleLogin}>
           <div>
             <div className="mt-7 mb-4">
-              <label className="" htmlFor="user-email" id="user-email">
+              <label htmlFor="user-email" id="user-email">
                 Email
               </label>
               <br />
@@ -116,7 +84,7 @@ const LoginForm = () => {
               />
             </div>
             <div>
-              <label className="" htmlFor="user-password" id="user-password">
+              <label htmlFor="user-password" id="user-password">
                 Password
               </label>
               <br />
@@ -130,16 +98,18 @@ const LoginForm = () => {
                 className="border px-2 py-3 w-full outline-none rounded-lg"
               />
             </div>
-            <div onClick={handleLogin}>
-              <div onClick={()=> setLoading(true)} className='bg-navlinks py-2 px-3 mt-8 rounded-md flex gap-2 items-center justify-center text-center text-white cursor-pointer hover:scale-105 duration-300 ease-linear'>
-              {loading &&
-                    <CgSpinner size={30} className="animate-spin"/>}
-                SIGN IN
-              </div>
-            </div>
-            </div>
-          </form> 
-          <p className='pt-3 text-blue-500 cursor-pointer text-right '>Forgot your password?</p>
+            <button
+              onClick={handleLogin}
+              type="submit"
+              className='bg-navlinks py-2 px-3 mt-8 rounded-md flex gap-2 items-center justify-center text-center text-white cursor-pointer hover:scale-105 duration-300 ease-linear'
+              disabled={loading}
+            >
+              {loading && <CgSpinner size={30} className="animate-spin" />}
+              SIGN IN
+            </button>
+          </div>
+        </form>
+        <p className='pt-3 text-blue-500 cursor-pointer text-right'>Forgot your password?</p>
       </div>
     </div>
   );
