@@ -2,14 +2,14 @@ import { Badge, Box, IconButton, ListItemIcon, Menu, MenuItem, Tooltip } from "@
 import React from "react";
 import { IoNotifications } from "react-icons/io5";
 import Avatar from '@mui/material/Avatar';
-import { useUser } from '../../context/UserContext'; // Import user context
+import { useUser } from '../../context/UserContext'; 
 import { Link } from "react-router-dom";
 
 
 const HeaderP: React.FC = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
-  const { fullName } = useUser(); // Access user's full name
+  const { fullName } = useUser(); 
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
