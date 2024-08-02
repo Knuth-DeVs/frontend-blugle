@@ -77,6 +77,7 @@ const LoginForm: React.FC = () => {
             <br />
             <input
               type="text"
+              required
               placeholder="Enter full name"
               value={userFullName}
               onChange={(e) => setUserFullName(e.target.value)}
@@ -88,6 +89,7 @@ const LoginForm: React.FC = () => {
             <br />
             <input
               type="email"
+              required
               placeholder="Enter email"
               value={userEmail}
               onChange={(e) => setUserEmail(e.target.value)}
@@ -99,6 +101,7 @@ const LoginForm: React.FC = () => {
             <br />
             <input
               type="password"
+              required
               placeholder="Enter password"
               value={userPassword}
               onChange={(e) => setUserPassword(e.target.value)}
