@@ -1,19 +1,19 @@
-// LoginForm.tsx
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { logo } from "../../assets/images";
 import { BiArrowBack } from "react-icons/bi";
-import { CgSpinner } from 'react-icons/cg';
-import { useUser } from '../../context/UserContext';
+import { CgSpinner } from "react-icons/cg";
+import { useUser } from "../../context/UserContext";
 
 const LoginForm: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
+  const [userFullName, setUserFullName] = useState("");
   const { setFullName } = useUser();
-  const reqBody = { userEmail, userPassword };
+  const reqBody = { userEmail, userPassword, userFullName };
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -31,7 +31,7 @@ const LoginForm: React.FC = () => {
 
       if (response.status === 200) {
         const { token, userRole, fullName } = response.data;
-        setFullName(fullName); // Set full name in context and localStorage
+        setFullName(userFullName || fullName); // Set full name in context and localStorage
         localStorage.setItem("accessToken", JSON.stringify(token));
         if (userRole === "doctor" || userRole === "admin") {
           navigate("/doctor/dashboard");
@@ -56,7 +56,7 @@ const LoginForm: React.FC = () => {
             <BiArrowBack className="text-2xl text-blue-600 cursor-pointer lg:hidden" />
           </Link>
           <img src={logo} className="lg:hidden" />
-          <h2 className="md:text-xl uppercase ">Start your Journey</h2>
+          <h2 className="md:text-xl uppercase">Start your Journey</h2>
           <p className="md:text-5xl font-bold pt-4 text-2xl">
             Sign In To <span className="text-blue-500">Blugle.</span>
           </p>
@@ -72,6 +72,17 @@ const LoginForm: React.FC = () => {
           method="POST"
           action="https://blugle-server.onrender.com/api/login"
         >
+          <div className="py-3 w-full sm:w-[450px] mt-2">
+            <label className="">Full Name</label>
+            <br />
+            <input
+              type="text"
+              placeholder="Enter full name"
+              value={userFullName}
+              onChange={(e) => setUserFullName(e.target.value)}
+              className="outline-none py-3 w-full border px-4 rounded-lg mb-2"
+            />
+          </div>
           <div className="py-3 w-full sm:w-[450px] mt-2">
             <label className="">Email Address</label>
             <br />
