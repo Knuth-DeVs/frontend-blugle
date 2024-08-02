@@ -83,7 +83,7 @@ const LoginForm: React.FC = () => {
               className="outline-none py-3 w-full border px-4 rounded-lg mb-2"
             />
           </div>
-          <div className="py-3 w-full sm:w-[450px] mt-2">
+          <div className="py-3 w-full sm:w-[450px]">
             <label className="">Email Address</label>
             <br />
             <input
