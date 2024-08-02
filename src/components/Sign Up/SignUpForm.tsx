@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import logo from "../../assets/logo.png";
 import axios from "axios";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
-import { useUser } from '../../context/UserContext';
+import { useUser } from "../../context/UserContext";
+import logo from "../../assets/logo.png";
 
 const SignUpForm: React.FC = () => {
   const [name, setName] = useState("");
@@ -28,9 +28,16 @@ const SignUpForm: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Basic client-side validation
+    if (!firstName || !lastName || !email || !phone || !pwd || !address) {
+      console.log("Please fill all fields.");
+      return;
+    }
+
     try {
       const response = await axios.post(
-        "https://blugle-backend-fork.vercel.app/",
+        "https://blugle-server.onrender.com/",
         reqBody,
         {
           headers: {
@@ -48,7 +55,7 @@ const SignUpForm: React.FC = () => {
       } else if (response.status === 200) {
         console.log("The send was successful");
         setFullName(name);
-        navigate('/patient/dashboard');
+        navigate("/login");
       }
     } catch (error) {
       console.error(error);
@@ -74,7 +81,11 @@ const SignUpForm: React.FC = () => {
             </span>
           </p>
         </div>
-        <form onSubmit={handleSubmit} method="POST" action="https://blugle-backend-fork.vercel.app/">
+        <form
+          onSubmit={handleSubmit}
+          method="POST"
+          action="https://blugle-server.onrender.com/"
+        >
           <div className="w-[330px] sm:w-[600px] lg:w-[400px]">
             <div className="mt-2 mb-2">
               <label className="">First Name</label>
@@ -161,7 +172,10 @@ const SignUpForm: React.FC = () => {
                 onChange={(e) => setPwd(e.target.value)}
               />
             </div>
-            <button onClick={handleSubmit} type="submit" className="bg-navlinks py-2 px-3 mt-8 rounded-md text-center text-white cursor-pointer hover:scale-105 duration-300 ease-linear">
+            <button
+              type="submit"
+              className="bg-navlinks py-2 px-3 mt-8 rounded-md text-center text-white cursor-pointer hover:scale-105 duration-300 ease-linear"
+            >
               SIGN UP
             </button>
           </div>

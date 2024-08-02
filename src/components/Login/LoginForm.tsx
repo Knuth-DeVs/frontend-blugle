@@ -6,7 +6,7 @@ import { BiArrowBack } from "react-icons/bi";
 import { CgSpinner } from 'react-icons/cg';
 import { useUser } from '../../context/UserContext';
 
-const LoginForm = () => {
+const LoginForm: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const [userEmail, setUserEmail] = useState("");
@@ -19,7 +19,7 @@ const LoginForm = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "https://www.blugle-backend-fork.vercel.app",
+        "https://blugle-server.onrender.com/",
         reqBody,
         {
           headers: {
@@ -49,7 +49,7 @@ const LoginForm = () => {
 
   return (
     <div>
-      <div className=" h-[100vh] lg:pr-36 mt-10 md:mt-24 mx-6">
+      <div className="h-[100vh] lg:pr-36 mt-10 md:mt-24 mx-6">
         <div className="w-full px-auto">
           <Link to="/">
             <BiArrowBack className="text-2xl text-blue-600 cursor-pointer lg:hidden" />
@@ -66,50 +66,50 @@ const LoginForm = () => {
             </span>
           </p>
         </div>
-        <form onSubmit={handleLogin} method = 'POST' action = "https://www.blugle-backend-fork.vercel.app">
-          <div>
-            <div className="mt-7 mb-4">
-              <label htmlFor="user-email" id="user-email">
-                Email
-              </label>
-              <br />
-              <input
-                type="email"
-                name="userEmail"
-                placeholder="Enter email here"
-                id="user-email"
-                value={userEmail}
-                onChange={(e) => setUserEmail(e.target.value)}
-                className="border px-2 py-3 w-full outline-none rounded-lg"
-              />
-            </div>
-            <div>
-              <label htmlFor="user-password" id="user-password">
-                Password
-              </label>
-              <br />
-              <input
-                type="password"
-                placeholder="Password"
-                id="user-password"
-                name="userPassword"
-                value={userPassword}
-                onChange={(e) => setUserPassword(e.target.value)}
-                className="border px-2 py-3 w-full outline-none rounded-lg"
-              />
-            </div>
-            <button
-              onClick={handleLogin}
-              type="submit"
-              className='bg-navlinks py-2 px-3 mt-8 rounded-md flex gap-2 items-center justify-center text-center text-white cursor-pointer hover:scale-105 duration-300 ease-linear'
-              disabled={loading}
-            >
-              {loading && <CgSpinner size={30} className="animate-spin" />}
-              SIGN IN
-            </button>
+        <form
+          onSubmit={handleLogin}
+          method="POST"
+          action="https://blugle-server.onrender.com/"
+        >
+          <div className="py-3 px-4 border rounded-lg mb-4 w-full sm:w-[450px] mt-2">
+            <label className="">Email Address</label>
+            <br />
+            <input
+              type="email"
+              placeholder="Enter email"
+              value={userEmail}
+              onChange={(e) => setUserEmail(e.target.value)}
+              className="outline-none py-3 w-full"
+            />
           </div>
+          <div className="py-3 px-4 border rounded-lg mb-4 w-full sm:w-[450px]">
+            <label className="">Password</label>
+            <br />
+            <input
+              type="password"
+              placeholder="Enter password"
+              value={userPassword}
+              onChange={(e) => setUserPassword(e.target.value)}
+              className="outline-none py-3 w-full"
+            />
+          </div>
+          <button
+            type="submit"
+            className="bg-navlinks py-2 px-3 rounded-md text-center text-white cursor-pointer w-full sm:w-[450px] hover:scale-105 duration-300 ease-linear"
+            disabled={loading}
+          >
+            {loading ? (
+              <CgSpinner className="animate-spin h-5 w-5 mx-auto" />
+            ) : (
+              "Sign In"
+            )}
+          </button>
         </form>
-        <p className='pt-3 text-blue-500 cursor-pointer text-right'>Forgot your password?</p>
+        <p className="pt-3 cursor-pointer text-center font-semibold">
+          By submitting your information, you agree to our{" "}
+          <span className="text-navlinkshover">Privacy Policy</span> and{" "}
+          <span className="text-navlinkshover">Terms of use</span>
+        </p>
       </div>
     </div>
   );
