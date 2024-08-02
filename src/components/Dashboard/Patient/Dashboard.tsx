@@ -34,8 +34,8 @@ const DashboardP: React.FC = () => {
       <div className='flex flex-col md:flex-row justify-between mx-10 mt-5 gap-24'>
         <div>
           <div className='flex items-center justify-between mb-5'>
-            <p className='text-xl font-semibold'>Upcoming Appointment</p>
-            <p className='text-blue-500 text-xl'>View All {">"}</p>
+            <p className='text-lg md:text-xl font-semibold'>Upcoming Appointment</p>
+            <p className='text-[12px] md:text-blue-500 text-xl'>View All {">"}</p>
           </div>
           <div className='border-2 p-2 rounded-xl shadow-2xl'>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
