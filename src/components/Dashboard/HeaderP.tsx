@@ -51,7 +51,7 @@ const HeaderP: React.FC = () => {
   return (
     <div className="border-b-2 w-full flex items-center justify-between my-2 px-2 md:px-5">
       <div className="flex flex-col">
-        <p className="text-gray-400">Hi, {fullName}</p>
+        <p className="text-gray-400">Hi, {fullName || "User"}</p>
         <p className="font-bold text-3xl">Welcome Back</p>
       </div>
       <div className="flex items-center gap-0">
