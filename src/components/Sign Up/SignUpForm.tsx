@@ -37,7 +37,7 @@ const SignUpForm: React.FC = () => {
 
     try {
       const response = await axios.post(
-        "https://blugle-server.onrender.com/",
+        "https://blugle-server.onrender.com",
         reqBody,
         {
           headers: {
@@ -84,7 +84,7 @@ const SignUpForm: React.FC = () => {
         <form
           onSubmit={handleSubmit}
           method="POST"
-          action="https://blugle-server.onrender.com/"
+          action="https://blugle-server.onrender.com"
         >
           <div className="w-[330px] sm:w-[600px] lg:w-[400px]">
             <div className="mt-2 mb-2">
