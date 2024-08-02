@@ -79,10 +79,10 @@ const LoginForm: React.FC = () => {
               placeholder="Enter email"
               value={userEmail}
               onChange={(e) => setUserEmail(e.target.value)}
-              className="outline-none py-3 w-full border px-4 rounded-lg mb-4"
+              className="outline-none py-3 w-full border px-4 rounded-lg mb-2"
             />
           </div>
-          <div className="py-3 mb-4 w-full">
+          <div className="mb-4 w-full">
             <label className="">Password</label>
             <br />
             <input
