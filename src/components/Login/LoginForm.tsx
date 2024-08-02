@@ -19,7 +19,7 @@ const LoginForm: React.FC = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "https://blugle-server.onrender.com",
+        "https://blugle-server.onrender.com/api/login",
         reqBody,
         {
           headers: {
@@ -69,7 +69,7 @@ const LoginForm: React.FC = () => {
         <form
           onSubmit={handleLogin}
           method="POST"
-          action="https://blugle-server.onrender.com"
+          action="https://blugle-server.onrender.com/api/login"
         >
           <div className="py-3 px-4 border rounded-lg mb-4 w-full sm:w-[450px] mt-2">
             <label className="">Email Address</label>
