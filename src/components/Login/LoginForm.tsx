@@ -1,3 +1,4 @@
+// LoginForm.tsx
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -30,7 +31,7 @@ const LoginForm: React.FC = () => {
 
       if (response.status === 200) {
         const { token, userRole, fullName } = response.data;
-        setFullName(fullName);
+        setFullName(fullName); // Set full name in context and localStorage
         localStorage.setItem("accessToken", JSON.stringify(token));
         if (userRole === "doctor" || userRole === "admin") {
           navigate("/doctor/dashboard");

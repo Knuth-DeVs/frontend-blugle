@@ -1,3 +1,4 @@
+// SignUpForm.tsx
 import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
@@ -54,7 +55,7 @@ const SignUpForm: React.FC = () => {
         console.log(response.data.message);
       } else if (response.status === 200) {
         console.log("The send was successful");
-        setFullName(name);
+        setFullName(name); // Store full name in context and localStorage
         navigate("/login");
       }
     } catch (error) {
