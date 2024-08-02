@@ -50,7 +50,7 @@ const LoginForm: React.FC = () => {
 
   return (
     <div>
-      <div className="h-[100vh] lg:pr-36 mt-10 md:mt-24 mx-6">
+      <div className="h-[100vh] lg:pr-36 mt-5 md:mt-24 mx-6">
         <div className="w-full px-auto">
           <Link to="/">
             <BiArrowBack className="text-2xl text-blue-600 cursor-pointer lg:hidden" />
@@ -80,7 +80,7 @@ const LoginForm: React.FC = () => {
               placeholder="Enter full name"
               value={userFullName}
               onChange={(e) => setUserFullName(e.target.value)}
-              className="outline-none py-3 w-full border px-4 rounded-lg mb-2"
+              className="outline-none py-3 w-full border px-4 rounded-lg mb-1"
             />
           </div>
           <div className="py-3 w-full sm:w-[450px]">
