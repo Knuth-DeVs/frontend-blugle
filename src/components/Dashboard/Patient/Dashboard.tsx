@@ -23,7 +23,7 @@ const records = [
 ]
 
 const DashboardP: React.FC = () => {
-  const [, onChange] = useState<Value>(new Date());
+  const [value, onChange] = useState<Value>(dayjs()); // Set current date as default
 
   return (
     <div className='overflow-y-auto h-[87vh] '>
@@ -41,7 +41,7 @@ const DashboardP: React.FC = () => {
               <DemoContainer components={['DateCalendar']}>
                 <DemoItem label={''}>
                   <DateCalendar
-                    defaultValue={dayjs('2022-04-17')}
+                    value={value} // Use the value state
                     views={['year', 'month', 'day']}
                     onChange={onChange}
                   />
@@ -66,110 +66,101 @@ const DashboardP: React.FC = () => {
           </div>
         </div>
       </div>
-        <div className='mt-8'>
-          <div className='flex items-center justify-between mx-10'>
-            <p className='text-2xl font-semibold'>Recommended Doctors</p>
-            <p className='text-blue-600'>View All {">"}</p>
+      <div className='mt-8'>
+        <div className='flex items-center justify-between mx-10'>
+          <p className='text-2xl font-semibold'>Recommended Doctors</p>
+          <p className='text-blue-600'>View All {">"}</p>
+        </div>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-5 mx-10 mb-4'>
+          <div className='border rounded-md mt-2 shadow-md'>
+            <div>
+              <div className='flex flex-row gap-3 items-center p-2 '>
+                <img src={Doc1} alt="" className='w-20'/>
+                <div>
+                  <p>Amanda Clara</p>
+                  <p>Specialist | 4+ experience</p>
+                  <p>Surgeon</p>
+                </div>
+              </div>
+              <hr className='my-2 mx-4'/>
+              <div className='flex flex-row gap-2 px-4'>
+                <div>
+                  <div>
+                    <p>Tue, Thu</p>
+                    <p>10:00AM - 01:00PM</p>
+                  </div>
+                </div>
+                <hr className='h-12 w-0.5 bg-black'/>
+                <div>
+                  <div>
+                    <p>$25</p>
+                    <p>Starting</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className='py-2 mx-2 rounded-md bg-blue-600 text-center my-3 text-white hover:opacity-80 duration-300 ease-linear cursor-pointer'>Book Appointment</div>
           </div>
-          <div className='grid grid-cols-1 md:grid-cols-3 gap-5 mx-10 mb-4'>
-            <div className='border rounded-md mt-2 shadow-md'>
-              <div>
-                <div className='flex flex-row gap-3 items-center p-2 '>
-                  <img src={Doc1} alt="" className='w-20'/>
-                  <div>
-                    <p>Amanda Clara</p>
-                    <p>Specialist | 4+ experience</p>
-                    <p>Surgeon</p>
-                  </div>
-                </div>
-                <hr className='my-2 mx-4'/>
-                <div className='flex flex-row gap-2 px-4'>
-                  <div>
-
-                    <div>
-                      <p>Tue, Thu</p>
-                      <p>10:00AM - 01:00PM</p>
-                    </div>
-                  </div>
-                  <hr className='h-12 w-0.5 bg-black'/>
-                  <div>
-
-                    <div>
-                      <p>$25</p>
-                      <p>Starting</p>
-                    </div>
-                  </div>
-                  
+          <div className='border rounded-md mt-2 shadow-md'>
+            <div>
+              <div className='flex flex-row gap-3 items-center p-2 '>
+                <img src={Doc2} alt="" className='w-20'/>
+                <div>
+                  <p>Amanda Clara</p>
+                  <p>Specialist | 4+ experience</p>
+                  <p>Surgeon</p>
                 </div>
               </div>
-              <div className='py-2 mx-2 rounded-md bg-blue-600 text-center my-3 text-white hover:opacity-80 duration-300 ease-linear cursor-pointer'>Book Appointment</div>
-            </div>
-            <div className='border rounded-md mt-2 shadow-md'>
-              <div>
-                <div className='flex flex-row gap-3 items-center p-2 '>
-                  <img src={Doc2} alt="" className='w-20'/>
+              <hr className='my-2 mx-4'/>
+              <div className='flex flex-row gap-2 px-4'>
+                <div>
                   <div>
-                    <p>Amanda Clara</p>
-                    <p>Specialist | 4+ experience</p>
-                    <p>Surgeon</p>
+                    <p>Tue, Thu</p>
+                    <p>10:00AM - 01:00PM</p>
                   </div>
                 </div>
-                <hr className='my-2 mx-4'/>
-                <div className='flex flex-row gap-2 px-4'>
+                <hr className='h-12 w-0.5 bg-black'/>
+                <div>
                   <div>
-
-                    <div>
-                      <p>Tue, Thu</p>
-                      <p>10:00AM - 01:00PM</p>
-                    </div>
+                    <p>$25</p>
+                    <p>Starting</p>
                   </div>
-                  <hr className='h-12 w-0.5 bg-black'/>
-                  <div>
-
-                    <div>
-                      <p>$25</p>
-                      <p>Starting</p>
-                    </div>
-                  </div>
-                  
                 </div>
               </div>
-              <div className='py-2 mx-2 rounded-md bg-blue-600 text-center my-3 text-white hover:opacity-80 duration-300 ease-linear cursor-pointer'>Book Appointment</div>
             </div>
-            <div className='border rounded-md mt-2 shadow-md'>
-              <div>
-                <div className='flex flex-row gap-3 items-center p-2 '>
-                  <img src={Doc3} alt="" className='w-20'/>
-                  <div>
-                    <p>Amanda Clara</p>
-                    <p>Specialist | 4+ experience</p>
-                    <p>Surgeon</p>
-                  </div>
-                </div>
-                <hr className='my-2 mx-4'/>
-                <div className='flex flex-row gap-2 px-4'>
-                  <div>
-
-                    <div>
-                      <p>Tue, Thu</p>
-                      <p>10:00AM - 01:00PM</p>
-                    </div>
-                  </div>
-                  <hr className='h-12 w-0.5 bg-black'/>
-                  <div>
-
-                    <div>
-                      <p>$25</p>
-                      <p>Starting</p>
-                    </div>
-                  </div>
-                  
+            <div className='py-2 mx-2 rounded-md bg-blue-600 text-center my-3 text-white hover:opacity-80 duration-300 ease-linear cursor-pointer'>Book Appointment</div>
+          </div>
+          <div className='border rounded-md mt-2 shadow-md'>
+            <div>
+              <div className='flex flex-row gap-3 items-center p-2 '>
+                <img src={Doc3} alt="" className='w-20'/>
+                <div>
+                  <p>Amanda Clara</p>
+                  <p>Specialist | 4+ experience</p>
+                  <p>Surgeon</p>
                 </div>
               </div>
-              <div className='py-2 mx-2 rounded-md bg-blue-600 text-center my-3 text-white hover:opacity-80 duration-300 ease-linear cursor-pointer'>Book Appointment</div>
+              <hr className='my-2 mx-4'/>
+              <div className='flex flex-row gap-2 px-4'>
+                <div>
+                  <div>
+                    <p>Tue, Thu</p>
+                    <p>10:00AM - 01:00PM</p>
+                  </div>
+                </div>
+                <hr className='h-12 w-0.5 bg-black'/>
+                <div>
+                  <div>
+                    <p>$25</p>
+                    <p>Starting</p>
+                  </div>
+                </div>
+              </div>
             </div>
+            <div className='py-2 mx-2 rounded-md bg-blue-600 text-center my-3 text-white hover:opacity-80 duration-300 ease-linear cursor-pointer'>Book Appointment</div>
           </div>
         </div>
+      </div>
     </div>
   )
 }
