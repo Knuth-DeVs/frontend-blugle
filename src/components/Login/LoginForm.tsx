@@ -35,7 +35,7 @@ const LoginForm: React.FC = () => {
         if (userRole === "doctor" || userRole === "admin") {
           navigate("/doctor/dashboard");
         } else {
-          navigate("/");
+          navigate("/patient/dashboard");
         }
       } else {
         console.log(response.data.message);
@@ -71,7 +71,7 @@ const LoginForm: React.FC = () => {
           method="POST"
           action="https://blugle-server.onrender.com/api/login"
         >
-          <div className="py-3 px-4 border rounded-lg mb-4 w-full sm:w-[450px] mt-2">
+          <div className="py-3 px-4  rounded-lg mb-4 w-full sm:w-[450px] mt-2">
             <label className="">Email Address</label>
             <br />
             <input
@@ -79,10 +79,10 @@ const LoginForm: React.FC = () => {
               placeholder="Enter email"
               value={userEmail}
               onChange={(e) => setUserEmail(e.target.value)}
-              className="outline-none py-3 w-full"
+              className="outline-none py-3 w-full border"
             />
           </div>
-          <div className="py-3 px-4 border rounded-lg mb-4 w-full sm:w-[450px]">
+          <div className="py-3 px-4  rounded-lg mb-4 w-full sm:w-[450px]">
             <label className="">Password</label>
             <br />
             <input
@@ -90,7 +90,7 @@ const LoginForm: React.FC = () => {
               placeholder="Enter password"
               value={userPassword}
               onChange={(e) => setUserPassword(e.target.value)}
-              className="outline-none py-3 w-full"
+              className="outline-none py-3 w-full border"
             />
           </div>
           <button
