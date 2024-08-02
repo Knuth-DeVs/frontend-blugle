@@ -4,6 +4,7 @@ import { IoNotifications } from "react-icons/io5";
 import Avatar from "@mui/material/Avatar";
 import { useUser } from "../../context/UserContext";
 import { Link } from "react-router-dom";
+import { BiLogOut } from "react-icons/bi";
 
 const HeaderP: React.FC = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -117,12 +118,12 @@ const HeaderP: React.FC = () => {
         >
           <MenuItem onClick={handleClose}>
             <Avatar {...stringAvatar(fullName || "User")} />
-            {fullName || "Profile"}
+            {"Profile"}
           </MenuItem>
           <Link to="/login">
             <MenuItem onClick={handleClose}>
               <ListItemIcon>
-                {/* Placeholder for an icon, e.g., <LogoutIcon fontSize="small" /> */}
+                <BiLogOut/>
               </ListItemIcon>
               Logout
             </MenuItem>

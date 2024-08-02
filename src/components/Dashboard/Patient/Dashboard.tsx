@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Banner from '../../../assets/DocBanner.png';
 import dayjs, { Dayjs } from 'dayjs';
 import { DemoContainer, DemoItem } from '@mui/x-date-pickers/internals/demo';
@@ -21,6 +21,10 @@ const records = [
 
 const DashboardP: React.FC = () => {
   const [value, setValue] = useState<ValuePiece>(dayjs()); // Set current date as default
+
+  useEffect(()=> {
+    document.title = "Dashboard"
+  })
 
   return (
     <div className='overflow-y-auto h-[87vh]'>
