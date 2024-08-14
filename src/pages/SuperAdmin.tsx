@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 
 // Define the credentials for the super admin
@@ -18,20 +19,13 @@ interface Doctor {
   credentials: Credentials;
 }
 
-interface User {
-  name: string;
-  email: string;
-  role: string;
-}
 
 const SuperAdminPage: React.FC = () => {
   const [doctorName, setDoctorName] = useState<string>('');
   const [doctorEmail, setDoctorEmail] = useState<string>('');
   const [userName, setUserName] = useState<string>('');
-  const [userEmail, setUserEmail] = useState<string>('');
-  const [role, setRole] = useState<string>('Doctor');
+  const [doctorPassword, setDoctorPassword] = useState<string>("");
   const [doctors, setDoctors] = useState<Doctor[]>([]);
-  const [users, setUsers] = useState<User[]>([]);
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const [adminUsername, setAdminUsername] = useState<string>('');
   const [adminPassword, setAdminPassword] = useState<string>('');
@@ -40,11 +34,12 @@ const SuperAdminPage: React.FC = () => {
   const handleGenerateDoctorCredentials = (): void => {
     const username = doctorEmail.split('@')[0];
     const password = Math.random().toString(36).slice(-8);
+    setDoctorPassword(password)
     const newDoctor: Doctor = {
       name: doctorName,
       email: doctorEmail,
       role: 'Doctor',
-      credentials: { username, password },
+      credentials: { username, password},
     };
 
     setDoctors((prevDoctors) => [...prevDoctors, newDoctor]);
@@ -52,25 +47,21 @@ const SuperAdminPage: React.FC = () => {
     console.log('Doctor Added:', newDoctor);
   };
 
-  const handleAddUser = (): void => {
-    const newUser: User = {
-      name: userName,
-      email: userEmail,
-      role: role,
-    };
-
-    setUsers((prevUsers) => [...prevUsers, newUser]);
-
-    console.log('User Added:', newUser);
-  };
-
+  console.log(doctorPassword)
   const handleRemoveDoctor = (index: number): void => {
     setDoctors((prevDoctors) => prevDoctors.filter((_, i) => i !== index));
   };
 
-  const handleRemoveUser = (index: number): void => {
-    setUsers((prevUsers) => prevUsers.filter((_, i) => i !== index));
-  };
+  //post request to endpoint
+
+  const handleSubmit = async ()=>{
+    try {
+      const request = await axios.post("https://blugle-server.onrender.com/api/signup", {userPassword:doctorPassword, userName:doctorName, userEmail:doctorEmail})
+      console.log(request.data)  
+    } catch (error) {
+      
+    }
+  }
 
   const handleLogin = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
@@ -163,6 +154,7 @@ const SuperAdminPage: React.FC = () => {
               />
             </div>
             <button
+            onClick={handleSubmit}
               type="submit"
               className="w-full py-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-200"
             >
@@ -198,88 +190,6 @@ const SuperAdminPage: React.FC = () => {
                     </div>
                     <button
                       onClick={() => handleRemoveDoctor(index)}
-                      className="text-red-500 hover:text-red-700"
-                    >
-                      Remove
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </div>
-
-        <div className="bg-white shadow-lg rounded-lg p-6 max-w-md lg:max-w-lg mx-auto mt-8">
-          <h2 className="text-xl font-bold mb-4 text-center">Manage Users</h2>
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              handleAddUser();
-            }}
-            className="space-y-4"
-          >
-            <div>
-              <label className="block font-semibold mb-2">User Name</label>
-              <input
-                type="text"
-                value={userName}
-                onChange={(e) => setUserName(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                required
-              />
-            </div>
-            <div>
-              <label className="block font-semibold mb-2">User Email</label>
-              <input
-                type="email"
-                value={userEmail}
-                onChange={(e) => setUserEmail(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-                required
-              />
-            </div>
-            <div>
-              <label className="block font-semibold mb-2">Role</label>
-              <select
-                value={role}
-                onChange={(e) => setRole(e.target.value)}
-                className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
-              >
-                <option value="Patient">Patient</option>
-                <option value="Nurse">Nurse</option>
-                {/* Add more roles if needed */}
-              </select>
-            </div>
-            <button
-              type="submit"
-              className="w-full py-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-200"
-            >
-              Add User
-            </button>
-          </form>
-
-          {users.length > 0 && (
-            <div className="mt-6">
-              <h3 className="font-semibold mb-2">Users List:</h3>
-              <ul className="space-y-2">
-                {users.map((user, index) => (
-                  <li
-                    key={index}
-                    className="flex justify-between items-center p-2 border border-gray-300 rounded"
-                  >
-                    <div>
-                      <p>
-                        <strong>Name:</strong> {user.name}
-                      </p>
-                      <p>
-                        <strong>Email:</strong> {user.email}
-                      </p>
-                      <p>
-                        <strong>Role:</strong> {user.role}
-                      </p>
-                    </div>
-                    <button
-                      onClick={() => handleRemoveUser(index)}
                       className="text-red-500 hover:text-red-700"
                     >
                       Remove
