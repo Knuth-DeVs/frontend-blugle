@@ -23,7 +23,6 @@ interface Doctor {
 const SuperAdminPage: React.FC = () => {
   const [doctorName, setDoctorName] = useState<string>('');
   const [doctorEmail, setDoctorEmail] = useState<string>('');
-  const [userName, setUserName] = useState<string>('');
   const [doctorPassword, setDoctorPassword] = useState<string>("");
   const [doctors, setDoctors] = useState<Doctor[]>([]);
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
