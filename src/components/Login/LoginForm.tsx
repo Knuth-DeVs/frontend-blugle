@@ -33,7 +33,7 @@ const LoginForm: React.FC = () => {
         const { token, userRole, fullName } = response.data;
         setFullName(userFullName || fullName); // Set full name in context and localStorage
         localStorage.setItem("accessToken", JSON.stringify(token));
-        if (userRole === "doctor" || userRole === "admin") {
+        if (userRole === "Doctor" || userRole === "admin") {
           navigate("/doctor/dashboard");
         } else {
           navigate("/patient/dashboard");
