@@ -25,6 +25,7 @@ const SuperAdminPage: React.FC = () => {
   const [doctorEmail, setDoctorEmail] = useState<string>('');
   const [doctorPassword, setDoctorPassword] = useState<string>("");
   const [doctors, setDoctors] = useState<Doctor[]>([]);
+  const [role, setRole] = useState<string>("Doctor")
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const [adminUsername, setAdminUsername] = useState<string>('');
   const [adminPassword, setAdminPassword] = useState<string>('');
@@ -55,7 +56,7 @@ const SuperAdminPage: React.FC = () => {
 
   const handleSubmit = async ()=>{
     try {
-      const request = await axios.post("https://blugle-server.onrender.com/api/signup", {userPassword:doctorPassword, userName:doctorName, userEmail:doctorEmail})
+      const request = await axios.post("https://blugle-server.onrender.com/api/signup", {userPassword:doctorPassword, userName:doctorName, userEmail:doctorEmail, userRole: role})
       console.log(request.data)  
     } catch (error) {
       
