@@ -25,7 +25,7 @@ const SuperAdminPage: React.FC = () => {
   const [doctorEmail, setDoctorEmail] = useState<string>('');
   const [doctorPassword, setDoctorPassword] = useState<string>("");
   const [doctors, setDoctors] = useState<Doctor[]>([]);
-  const [role, setRole] = useState<string>("Doctor")
+  const [role, _] = useState("Doctor")
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const [adminUsername, setAdminUsername] = useState<string>('');
   const [adminPassword, setAdminPassword] = useState<string>('');
