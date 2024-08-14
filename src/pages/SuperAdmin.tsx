@@ -25,7 +25,7 @@ const SuperAdminPage: React.FC = () => {
   const [doctorEmail, setDoctorEmail] = useState<string>('');
   const [doctorPassword, setDoctorPassword] = useState<string>("");
   const [doctors, setDoctors] = useState<Doctor[]>([]);
-  const [role, _] = useState("Doctor")
+  const [role, setRole] = useState("Doctor")
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const [adminUsername, setAdminUsername] = useState<string>('');
   const [adminPassword, setAdminPassword] = useState<string>('');
@@ -152,6 +152,13 @@ const SuperAdminPage: React.FC = () => {
                 className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                 required
               />
+            </div>
+            <div>
+              <label className="block font-semibold mb-2">Role</label>
+              <select name="userRole" id="" value={role} onChange={(e) => setRole(e.target.value)} className='border rounded-md w-full px-2 py-4'>
+                <option value='Admin'>Admin</option>
+                <option value='Doctor'>Doctor</option>
+              </select>
             </div>
             <button
             onClick={handleSubmit}
