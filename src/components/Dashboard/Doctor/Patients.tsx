@@ -91,7 +91,7 @@ const Patients: React.FC = () => {
         </div>
       </div>
       <div className='mt-4 bg-gray-200 p-2 rounded-md'>
-        <div className='grid grid-cols-6 gap-2 p-3 font-semibold border-b border-gray-400'>
+        <div className='grid grid-cols-4 gap-2 p-3 font-semibold border-b border-gray-400'>
           <p>Patients</p>
           <p>Phone Number</p>
           <p>Location</p>
@@ -100,7 +100,7 @@ const Patients: React.FC = () => {
           {
             sortedData.length > 0 ? (
               sortedData.map((item) => (
-                <div key={item._id} className='grid grid-cols-6 gap-2 p-2 rounded-md shadow-sm'>
+                <div key={item._id} className='grid grid-cols-4 gap-2 p-2 rounded-md shadow-sm'>
                   <div>
                     <p>{item.userName}</p>
                     <p className='text-gray-600'>{item.userEmail}</p>
