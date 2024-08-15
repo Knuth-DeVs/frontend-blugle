@@ -47,7 +47,7 @@ const AppointmentP: React.FC = () => {
         </div>
         <div>
             <label htmlFor="">Full Name</label><br />
-            <input type="number" value={name} onChange={(e) => setName(e.target.value)} required name='fullName' className='p-2 border-b border-gray-400 w-[340px] md:w-[900px] outline-none'/>
+            <input type="text" value={name} onChange={(e) => setName(e.target.value)} required name='fullName' className='p-2 border-b border-gray-400 w-[340px] md:w-[900px] outline-none'/>
           </div>
         <div className='flex flex-col sm:flex-row gap-3 md:gap-8 w-full mb-6'>
           <div>
