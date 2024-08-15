@@ -62,7 +62,7 @@ const SuperAdminPage: React.FC = () => {
 
   const handleSubmit = async ()=>{
     try {
-      const request = await axios.post("https://blugle-server.onrender.com/api/signup", {userPassword:doctorPassword, userName:doctorName, userEmail:doctorEmail, userRole: role})
+      const request = await axios.post("https://blugle-server.onrender.com/api/signup", {userEmail:doctorEmail,userPassword:doctorPassword, userName:doctorName, userRole: role})
       console.log(request.data)  
     } catch (error) {
       console.log(error)

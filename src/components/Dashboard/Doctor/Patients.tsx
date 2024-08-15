@@ -1,51 +1,58 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
 import { Menu, MenuItem } from '@mui/material';
 import { HiDotsHorizontal } from 'react-icons/hi';
 import { MdDelete, MdEdit } from 'react-icons/md';
 import { useOutletContext } from 'react-router-dom';
+import axios from 'axios';
 
-const initialData = [
-  { id: "001", name: "Paul Tech", email: "test@email.com", contact: "0593536610", location: "CS", regDate: "12/03/24" },
-  { id: "002", name: "Peter Tech", email: "test@email.com", contact: "0593536610", location: "Bani", regDate: "12/03/24" },
-  { id: "003", name: "Elijah Tech", email: "test@email.com", contact: "0593536610", location: "Kasoa", regDate: "12/03/24" },
-  { id: "004", name: "Danny Tech", email: "test@email.com", contact: "0593536610", location: "Amasaman", regDate: "12/03/24" },
-  { id: "005", name: "Julius Tech", email: "test@email.com", contact: "0593536610", location: "Kasoa", regDate: "12/03/24" },
-  { id: "006", name: "Ella Tech", email: "test@email.com", contact: "0593536610", location: "Okponglo", regDate: "12/03/24" },
-  { id: "007", name: "Fay Tech", email: "test@email.com", contact: "0593536610", location: "Nima", regDate: "12/03/24" },
-  { id: "008", name: "Peprah Tech", email: "test@email.com", contact: "0593536610", location: "Sowutuom", regDate: "12/03/24" },
-  { id: "009", name: "Gabby Tech", email: "test@email.com", contact: "0593536610", location: "Kasoa", regDate: "12/03/24" },
-  { id: "010", name: "Gabby Tech", email: "test@email.com", contact: "0593536610", location: "Kasoa", regDate: "12/03/24" },
-];
+
+
+interface userDetails {
+  _id: string;
+  userName: string;
+  userEmail: string;
+  userPhone: string;
+  userAddress: string;
+}
 
 const Patients: React.FC = () => {
   const { searchQuery } = useOutletContext<{ searchQuery: string }>();
   const [sortOption, setSortOption] = useState<string>('name');
-  const [patients, setPatients] = useState(initialData);
+  const [patients, setPatients] = useState<userDetails[]>([]);
+
+  const getUsers = async () => {
+    const response = await axios.get("https://blugle-server.onrender.com/api/get-users")
+    setPatients(response.data.userData);
+  }
+
+  useEffect(() => {
+    getUsers();
+  })
 
   // Filter and sort data based on the selected sort option
   const getSortedData = () => {
     const filteredData = patients.filter(
       item =>
-        item.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.contact.toLowerCase().includes(searchQuery.toLowerCase())
+        item.userName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.userAddress.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.userEmail.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        item.userPhone.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
     switch (sortOption) {
       case 'id':
-        return filteredData.sort((a, b) => a.id.localeCompare(b.id));
+        return filteredData.sort((a, b) => a._id.localeCompare(b._id));
       case 'city':
-        return filteredData.sort((a, b) => a.location.localeCompare(b.location));
+        return filteredData.sort((a, b) => a.userAddress.localeCompare(b.userAddress));
       case 'name':
       default:
-        return filteredData.sort((a, b) => a.name.localeCompare(b.name));
+        return filteredData.sort((a, b) => a.userName.localeCompare(b.userName));
     }
   };
 
   const handleDelete = (id: string) => {
-    setPatients(prevPatients => prevPatients.filter(patient => patient.id !== id));
+    setPatients(prevPatients => prevPatients.filter(patient => patient._id !== id));
   };
 
   const sortedData = getSortedData();
@@ -90,22 +97,22 @@ const Patients: React.FC = () => {
           {
             sortedData.length > 0 ? (
               sortedData.map((item) => (
-                <div key={item.id} className='grid grid-cols-6 gap-2 p-2 rounded-md shadow-sm'>
-                  <p className='font-bold'>#{item.id}</p>
+                <div key={item._id} className='grid grid-cols-6 gap-2 p-2 rounded-md shadow-sm'>
+                  <p className='font-bold'>#{item._id}</p>
                   <div>
-                    <p>{item.name}</p>
-                    <p className='text-gray-600'>{item.email}</p>
+                    <p>{item.userName}</p>
+                    <p className='text-gray-600'>{item.userEmail}</p>
                   </div>
-                  <p className='ml-4'>{item.contact}</p>
-                  <p className='ml-5'>{item.location}</p>
-                  <p className='ml-10'>{item.regDate}</p>
-                  <PopupState variant="popover" popupId={`popup-menu-${item.id}`}>
+                  <p className='ml-4'>{item.userPhone}</p>
+                  <p className='ml-5'>{item.userAddress}</p>
+                  <p className='ml-10'>12/08/24</p>
+                  <PopupState variant="popover" popupId={`popup-menu-${item._id}`}>
                     {(popupState) => (
                       <React.Fragment>
                         <HiDotsHorizontal {...bindTrigger(popupState)} className='cursor-pointer ml-10' />
                         <Menu {...bindMenu(popupState)}>
                           <MenuItem onClick={popupState.close} className='flex items-center gap-2'><MdEdit />Edit</MenuItem>
-                          <MenuItem onClick={() => { handleDelete(item.id); popupState.close(); }} className='flex items-center gap-2'><MdDelete />Delete</MenuItem>
+                          <MenuItem onClick={() => { handleDelete(item._id); popupState.close(); }} className='flex items-center gap-2'><MdDelete />Delete</MenuItem>
                         </Menu>
                       </React.Fragment>
                     )}
