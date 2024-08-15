@@ -2,7 +2,6 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
 
-
 interface AppointmentDetails {
   fullName: string,
   email: string,
@@ -29,8 +28,7 @@ const Appointment: React.FC = () => {
     Appointment()
   }, [])
 
-
-  const filteredData = data.filter(
+  const filteredData = data && data.filter(
     item =>
       item.fullName.toLowerCase().includes(searchQuery.toLowerCase()) ||
       item.email.toLowerCase().includes(searchQuery.toLowerCase())
