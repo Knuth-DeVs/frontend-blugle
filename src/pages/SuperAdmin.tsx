@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 // Define the credentials for the super admin
 const ADMIN_CREDENTIALS = {
@@ -34,7 +34,6 @@ const SuperAdminPage: React.FC = () => {
   const handleGenerateDoctorCredentials = (): void => {
     const username = doctorEmail.split('@')[0];
     const password = Math.random().toString(36).slice(-8);
-    setDoctorPassword(password)
     const newDoctor: Doctor = {
       name: doctorName,
       email: doctorEmail,
@@ -42,6 +41,13 @@ const SuperAdminPage: React.FC = () => {
       credentials: { username, password},
     };
 
+    const updatePassword = ()=>{
+      setDoctorPassword(password)
+      console.log(doctorPassword)
+    }
+
+    //call the update password function
+    updatePassword()
     setDoctors((prevDoctors) => [...prevDoctors, newDoctor]);
 
     console.log('Doctor Added:', newDoctor);
