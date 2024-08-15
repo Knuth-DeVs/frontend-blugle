@@ -24,7 +24,8 @@ const Patients: React.FC = () => {
   const getUsers = async () => {
     try {
       const response = await axios.get("https://blugle-server.onrender.com/api/get-users")
-    setPatients(response.data.userData);
+      setPatients(response.data.userData)
+      console.log(response.data.userData)
     } catch (error) {
       console.error(error)
     }
@@ -32,7 +33,7 @@ const Patients: React.FC = () => {
 
   useEffect(() => {
     getUsers();
-  })
+  }, [])
 
   // Filter and sort data based on the selected sort option
   const getSortedData = () => {
