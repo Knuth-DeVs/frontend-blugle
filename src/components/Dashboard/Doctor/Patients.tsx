@@ -100,24 +100,26 @@ const Patients: React.FC = () => {
           {
             sortedData.length > 0 ? (
               sortedData.map((item) => (
-                <div key={item._id} className='grid grid-cols-4 gap-8 p-2 rounded-md shadow-sm'>
+                <div key={item._id} className='grid grid-cols-3 gap-8 p-2 rounded-md shadow-sm'>
                   <div>
                     <p>{item.userName}</p>
                     <p className='text-gray-600'>{item.userEmail}</p>
                   </div>
                   <p className='ml-4'>{item.userPhone}</p>
-                  <p className='ml-5'>{item.userAddress}</p>
-                  <PopupState variant="popover" popupId={`popup-menu-${item._id}`}>
-                    {(popupState) => (
-                      <React.Fragment>
-                        <HiDotsHorizontal {...bindTrigger(popupState)} className='cursor-pointer ml-10' />
-                        <Menu {...bindMenu(popupState)}>
-                          <MenuItem onClick={popupState.close} className='flex items-center gap-2'><MdEdit />Edit</MenuItem>
-                          <MenuItem onClick={() => { handleDelete(item._id); popupState.close(); }} className='flex items-center gap-2'><MdDelete />Delete</MenuItem>
-                        </Menu>
-                      </React.Fragment>
-                    )}
-                  </PopupState>
+                  <div className='flex items-center gap-10'>
+                    <p className='ml-8'>{item.userAddress}</p>
+                      <PopupState variant="popover" popupId={`popup-menu-${item._id}`}>
+                        {(popupState) => (
+                          <React.Fragment>
+                            <HiDotsHorizontal {...bindTrigger(popupState)} className='cursor-pointer ml-10' />
+                            <Menu {...bindMenu(popupState)}>
+                              <MenuItem onClick={popupState.close} className='flex items-center gap-2'><MdEdit />Edit</MenuItem>
+                              <MenuItem onClick={() => { handleDelete(item._id); popupState.close(); }} className='flex items-center gap-2'><MdDelete />Delete</MenuItem>
+                            </Menu>
+                          </React.Fragment>
+                        )}
+                      </PopupState>
+                  </div>
                 </div>
               ))
             ) : (
