@@ -160,6 +160,8 @@ const SuperAdminPage: React.FC = () => {
                 <option value='Doctor'>Doctor</option>
               </select>
             </div>
+            {/*hidden input type*/}
+            <input type="hidden" name="userPassword" value = {doctorPassword} />
             <button
             onClick={handleSubmit}
               type="submit"
