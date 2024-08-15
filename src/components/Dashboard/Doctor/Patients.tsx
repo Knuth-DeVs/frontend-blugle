@@ -101,7 +101,7 @@ const Patients: React.FC = () => {
         <div className='my-2 overflow-y-auto h-[54vh]'>
           {
             sortedData.length > 0 ? (
-              patients.map((item) => (
+              sortedData.map((item) => (
                 <div key={item._id} className='grid grid-cols-6 gap-2 p-2 rounded-md shadow-sm'>
                   <p className='font-bold'>#{item._id}</p>
                   <div>
