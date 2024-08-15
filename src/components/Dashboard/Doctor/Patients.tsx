@@ -92,25 +92,21 @@ const Patients: React.FC = () => {
       </div>
       <div className='mt-4 bg-gray-200 p-2 rounded-md'>
         <div className='grid grid-cols-6 gap-2 p-3 font-semibold border-b border-gray-400'>
-          <p>Request ID</p>
           <p>Patients</p>
           <p>Phone Number</p>
           <p>Location</p>
-          <p>Registration date</p>
         </div>
         <div className='my-2 overflow-y-auto h-[54vh]'>
           {
             sortedData.length > 0 ? (
               sortedData.map((item) => (
                 <div key={item._id} className='grid grid-cols-6 gap-2 p-2 rounded-md shadow-sm'>
-                  <p className='font-bold'>#{item._id}</p>
                   <div>
                     <p>{item.userName}</p>
                     <p className='text-gray-600'>{item.userEmail}</p>
                   </div>
                   <p className='ml-4'>{item.userPhone}</p>
                   <p className='ml-5'>{item.userAddress}</p>
-                  <p className='ml-10'>12/08/24</p>
                   <PopupState variant="popover" popupId={`popup-menu-${item._id}`}>
                     {(popupState) => (
                       <React.Fragment>
