@@ -107,7 +107,7 @@ const Patients: React.FC = () => {
                   </div>
                   <p className='ml-4'>{item.userPhone}</p>
                   <div className='flex items-center gap-10'>
-                    <p className='ml-8'>{item.userAddress}</p>
+                    <p className='ml-5'>{item.userAddress}</p>
                       <PopupState variant="popover" popupId={`popup-menu-${item._id}`}>
                         {(popupState) => (
                           <React.Fragment>
