@@ -22,8 +22,12 @@ const Patients: React.FC = () => {
   const [patients, setPatients] = useState<userDetails[]>([]);
 
   const getUsers = async () => {
-    const response = await axios.get("https://blugle-server.onrender.com/api/get-users")
+    try {
+      const response = await axios.get("https://blugle-server.onrender.com/api/get-users")
     setPatients(response.data.userData);
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   useEffect(() => {
