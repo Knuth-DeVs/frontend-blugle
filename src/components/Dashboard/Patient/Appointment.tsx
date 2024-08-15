@@ -11,6 +11,7 @@ const AppointmentP: React.FC = () => {
   const [date, setDate] = React.useState<Dayjs | null>(dayjs('2022-04-17'));
   const [time, setTime] = React.useState<Dayjs | null>(dayjs('2022-04-17T15:30'));
   const [email, setEmail] = useState<string>("")
+  const [name, setName] = useState<string>("")
   const [phone, setPhone] = useState<string>("")
   const [doctorSelected, setDoctorSelected] = useState<string>("")
   const [reason, setReason] = useState<string>("")
@@ -22,7 +23,7 @@ const AppointmentP: React.FC = () => {
   const handleSubmit = async () => {
     try {
       const response = await axios.post("https://blugle-server.onrender.com/api/book-appointment", {
-        appointmentDate:date, appointmentTime:time, email, phone, reason, doctorSelected
+        appointmentDate:date, appointmentTime:time, email, phone, reason, doctorSelected, fullName:name
       })
       console.log(response.data)
     } catch (error) {
@@ -44,6 +45,10 @@ const AppointmentP: React.FC = () => {
             <input type="number" value={phone} onChange={(e) => setPhone(e.target.value)} required name='phone' className='p-2 border-b border-gray-400 w-[340px] md:w-[500px] outline-none'/>
           </div>
         </div>
+        <div>
+            <label htmlFor="">Full Name</label><br />
+            <input type="number" value={name} onChange={(e) => setName(e.target.value)} required name='fullName' className='p-2 border-b border-gray-400 w-[340px] md:w-[900px] outline-none'/>
+          </div>
         <div className='flex flex-col sm:flex-row gap-3 md:gap-8 w-full mb-6'>
           <div>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
