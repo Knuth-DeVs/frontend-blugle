@@ -25,7 +25,7 @@ const Contact: React.FC = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/email",
+        "https://blugle-server.onrender.com/api/email",
         reqBody,
         {
           headers: {
@@ -76,7 +76,7 @@ const Contact: React.FC = () => {
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
-      <form action="http://localhost:5000" method="POST">
+      <form action="https://blugle-server.onrender.com" method="POST">
         <div className="border-2 border-blue-600 rounded-2xl flex flex-row p-2 md:mx-20 gap-6 mt-6 mx-6">
           <div className="hidden w-[400px] bg-blue-600 rounded-2xl py-auto md:flex md:flex-col md:items-center md:justify-center">
             <p className="text-white font-bold text-7xl px-3">
