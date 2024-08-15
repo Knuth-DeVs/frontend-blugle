@@ -26,7 +26,7 @@ const AppointmentP: React.FC = () => {
       })
       console.log(response.data)
     } catch (error) {
-      console.log(error)
+      console.log({"Error" :error})
     }
   }
 

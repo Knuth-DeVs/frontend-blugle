@@ -50,7 +50,7 @@ const LoginForm: React.FC = () => {
 
   return (
     <div>
-      <div className="h-[100vh] lg:pr-36 mt-5 md:mt-24 mx-6">
+      <div className="lg:h-[100vh] lg:pr-36 mt-5 md:mt-24 mx-6">
         <div className="w-full px-auto">
           <Link to="/">
             <BiArrowBack className="text-2xl text-blue-600 cursor-pointer lg:hidden" />
