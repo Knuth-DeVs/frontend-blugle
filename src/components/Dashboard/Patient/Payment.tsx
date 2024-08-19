@@ -7,8 +7,8 @@ const PaymentP: React.FC = () => {
     document.title = "Payments"
   })
 
-  const [email, setEmail] = useState<string>("")
-  const [amount, setAmount] = useState<number>(0)
+  const [email, setEmail] = useState("")
+  const [amount, setAmount] = useState("")
 
   const Payment = async () => {
     const response = await axios.post("https://blugle-server.onrender.com/api/payment-initialize", {
@@ -51,11 +51,11 @@ const PaymentP: React.FC = () => {
             type="number"
             id="amount"
             value={amount}
-            onChange={(e) => setAmount(Number(e.target.value))}
+            onChange={(e) => setAmount(e.target.value)}
             required
           />
 
-          <button type="submit" className='bg-navlinks w-fit h-fit px-3 py-2 cursor-pointer text-white rounded-md hover:bg-opacity-75 duration-300 ease-linear'>
+          <button onClick={handleSubmit} type="submit" className='bg-navlinks w-fit h-fit px-3 py-2 cursor-pointer text-white rounded-md hover:bg-opacity-75 duration-300 ease-linear'>
             Make Payment
           </button>
         </div>
