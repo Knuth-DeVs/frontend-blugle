@@ -35,7 +35,7 @@ const PaymentP: React.FC = () => {
       </div>
       {/* ... existing table code ... */}
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} method='POST' action='https://blugle-server.onrender.com/api/payment-initialize'>
         <div className='flex flex-col gap-2 mx-10'>
           <label htmlFor="email">Email:</label>
           <input
