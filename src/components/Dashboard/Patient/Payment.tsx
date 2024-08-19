@@ -10,9 +10,12 @@ const PaymentP: React.FC = () => {
   const [email, setEmail] = useState("")
   const [amount, setAmount] = useState("")
 
+  const requestBody = {email, userAmount:amount}
   const Payment = async () => {
-    const response = await axios.post("https://blugle-server.onrender.com/api/payment-initialize", {
-      userAmount:amount, email
+    const response = await axios.post("https://blugle-server.onrender.com/api/payment-initialize", requestBody, {
+      headers:{
+        "Content-Type": "application/json"
+      }
     })
     const authURL = response.data.authorizationUrl;
     if (response.status === 200){
