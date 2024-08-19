@@ -51,7 +51,6 @@ const App: React.FC = () => {
         <Route path='/admin' element={<SuperAdminPage/>}/>
       </Routes>
 
-      <ToastContainer />
     </>
   );
 };
