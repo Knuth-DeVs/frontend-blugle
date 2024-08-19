@@ -81,7 +81,7 @@ const Contact: React.FC = () => {
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} method="POST" action="https://blugle-server.onrender.com/api/email">
         <div className="border-2 border-blue-600 rounded-2xl flex flex-row p-2 md:mx-20 gap-6 mt-6 mx-6">
           <div className="hidden w-[400px] bg-blue-600 rounded-2xl py-auto md:flex md:flex-col md:items-center md:justify-center">
             <p className="text-white font-bold text-7xl px-3">
