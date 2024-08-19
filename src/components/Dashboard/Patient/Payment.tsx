@@ -1,5 +1,5 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+// import axios from 'axios'
+import React, { useEffect } from 'react'
 
 const PaymentP: React.FC = () => {
 
@@ -7,29 +7,27 @@ const PaymentP: React.FC = () => {
     document.title = "Payments"
   })
 
-  const [email, setEmail] = useState("")
-  const [amount, setAmount] = useState("")
+  // const [email, setEmail] = useState("")
+  // const [amount, setAmount] = useState("")
 
-  const requestBody = {email, userAmount:amount}
-  const Payment = async () => {
-    const response = await axios.post("https://blugle-server.onrender.com/api/payment-initialize", requestBody, {
-      headers:{
-        "Content-Type": "application/json"
-      }
-    })
-    const authURL = response.data.authorizationUrl;
-    if (response.status === 200){
-      window.location.href = authURL;
-    }
-    else{
-      console.log("Payment initialization failed")
-    }
-  }
+  // const requestBody = {email, userAmount:amount}
+  // const handleSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault()
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    Payment()
-  }
+
+  //   const response = await axios.post("https://blugle-server.onrender.com/api/payment-initialize", requestBody, {
+  //     headers:{
+  //       "Content-Type": "application/json"
+  //     }
+  //   })
+  //   const authURL = response.data.authorizationUrl;
+  //   if (response.status === 200){
+  //     window.location.href = authURL;
+  //   }
+  //   else{
+  //     console.log("Payment initialization failed")
+  //   }
+  // }
 
   return (
     <div className=''>
@@ -38,7 +36,7 @@ const PaymentP: React.FC = () => {
       </div>
       {/* ... existing table code ... */}
 
-      <form onSubmit={handleSubmit} method='POST' action='https://blugle-server.onrender.com/api/payment-initialize'>
+      {/* <form onSubmit={handleSubmit} method='POST' action='https://blugle-server.onrender.com/api/payment-initialize'>
         <div className='flex flex-col gap-2 mx-10'>
           <label htmlFor="email">Email:</label>
           <input
@@ -62,7 +60,7 @@ const PaymentP: React.FC = () => {
             Make Payment
           </button>
         </div>
-      </form>
+      </form> */}
     </div>
   )
 }
