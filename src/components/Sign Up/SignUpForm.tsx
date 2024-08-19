@@ -1,4 +1,3 @@
-// SignUpForm.tsx
 import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
@@ -7,7 +6,6 @@ import { useUser } from "../../context/UserContext";
 import logo from "../../assets/logo.png";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
 
 const SignUpForm: React.FC = () => {
   const [name, setName] = useState("");
@@ -35,7 +33,7 @@ const SignUpForm: React.FC = () => {
 
     // Basic client-side validation
     if (!firstName || !lastName || !email || !phone || !pwd || !address) {
-      console.log("Please fill all fields.");
+      toast.error("Please fill all fields.", { position: "top-right" });
       return;
     }
 
@@ -50,24 +48,24 @@ const SignUpForm: React.FC = () => {
         }
       );
 
-      if (response.status === 400) {
-        console.log(response.data.message);
-        toast.error("Please try again, please check your credentials.");
-      } else if (response.status === 409) {
-        console.log(response.data.existingUserMessage);
-        toast.error("An account with this email already exists.");
-      } else if (response.status === 500) {
-        console.log(response.data.message);
-        toast.error("An error occurred during sign up.");
-      } else if (response.status === 200) {
+      if (response.status === 200) {
         console.log("The send was successful");
         setFullName(name); // Store full name in context and localStorage
         navigate("/login");
-        toast.success("Account created successfully!");
+        toast.success("Account created successfully!", { position: "top-right" });
+      } else if (response.status === 400) {
+        console.log(response.data.message);
+        toast.error("Please check your credentials and try again.", { position: "top-right" });
+      } else if (response.status === 409) {
+        console.log(response.data.existingUserMessage);
+        toast.error("An account with this email already exists.", { position: "top-right" });
+      } else if (response.status === 500) {
+        console.log(response.data.message);
+        toast.error("An error occurred during sign up.", { position: "top-right" });
       }
     } catch (error) {
       console.error(error);
-      toast.error("An error occurred during sign up.");
+      toast.error("An error occurred during sign up.", { position: "top-right" });
     }
   };
 

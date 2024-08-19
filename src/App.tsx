@@ -20,6 +20,8 @@ import Notification from './components/Dashboard/Patient/Notification'
 import Doctors from './components/Dashboard/Patient/Doctors'
 import PaymentP from './components/Dashboard/Patient/Payment'
 import SuperAdminPage from './pages/SuperAdmin'
+import { ToastContainer } from "react-toastify"; // Import ToastContainer
+import 'react-toastify/dist/ReactToastify.css'; // Import Toastify CSS
 
 const App: React.FC = () => {
   return (
@@ -48,6 +50,8 @@ const App: React.FC = () => {
         </Route>
         <Route path='/admin' element={<SuperAdminPage/>}/>
       </Routes>
+
+      <ToastContainer />
     </>
   );
 };

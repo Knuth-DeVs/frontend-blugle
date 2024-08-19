@@ -40,13 +40,13 @@ const LoginForm: React.FC = () => {
         } else {
           navigate("/patient/dashboard");
         }
-        toast.success("Logged in successfully!");
+        toast.success("Logged in successfully!", { position: "top-right" });
       } else {
-        toast.error("Login not valid, please check your credentials.");
+        toast.error("Login not valid, please check your credentials.", { position: "top-right" });
       }
     } catch (error) {
       console.error("Login error:", error);
-      toast.error("An error occurred during login.");
+      toast.error("An error occurred during login.", { position: "top-right" });
     } finally {
       setLoading(false);
     }
