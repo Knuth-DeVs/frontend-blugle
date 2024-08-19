@@ -4,7 +4,6 @@ import { TbLayoutDashboardFilled } from 'react-icons/tb';
 import { FaBookMedical } from 'react-icons/fa';
 import { GrUserManager } from 'react-icons/gr';
 import { AiFillMessage } from 'react-icons/ai';
-import { CgProfile } from 'react-icons/cg';
 import { BiLogOut } from 'react-icons/bi';
 import { NavLink } from 'react-router-dom';
 import { FaSackDollar } from 'react-icons/fa6';
@@ -63,15 +62,6 @@ const Sidebar = () => {
                     >
                         <FaSackDollar />
                         {extend ? <p className='hidden md:block'>Payments</p> : null}
-                    </NavLink>
-                    <NavLink
-                        to="/patient/profile"
-                        className={({ isActive }) =>
-                            `px-2 py-2 rounded-md text-navlinks cursor-pointer flex items-center gap-2 ${isActive ? 'bg-navlinks text-white' : 'bg-white'}`
-                        }
-                    >
-                        <CgProfile />
-                        {extend ? <p className='hidden md:block'>Profile</p> : null}
                     </NavLink>
                 </div>
             </div>
