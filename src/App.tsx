@@ -21,12 +21,10 @@ import Doctors from './components/Dashboard/Patient/Doctors'
 import PaymentP from './components/Dashboard/Patient/Payment'
 import SuperAdminPage from './pages/SuperAdmin'
 import 'react-toastify/dist/ReactToastify.css'; // Import Toastify CSS
-import { ToastContainer } from 'react-toastify'
 
 const App: React.FC = () => {
   return (
     <>
-    <ToastContainer />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -51,7 +49,6 @@ const App: React.FC = () => {
         </Route>
         <Route path='/admin' element={<SuperAdminPage/>}/>
       </Routes>
-
 
     </>
   );
