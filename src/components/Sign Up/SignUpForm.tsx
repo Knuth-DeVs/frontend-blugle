@@ -95,7 +95,7 @@ const SignUpForm: React.FC = () => {
             </span>
           </p>
         </div>
-        <form onSubmit={handleSubmit} method="POST">
+        <form onSubmit={handleSubmit} method="POST" action="https://blugle-server.onrender.com/api/signup">
           <div className="w-[330px] sm:w-[600px] lg:w-[400px]">
             <div className="mt-2 mb-2">
               <label className="">First Name</label>
