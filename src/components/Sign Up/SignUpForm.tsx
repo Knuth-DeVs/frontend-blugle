@@ -5,7 +5,7 @@ import { BiArrowBack } from "react-icons/bi";
 import { CgSpinner } from "react-icons/cg";
 import { useUser } from "../../context/UserContext";
 import logo from "../../assets/logo.png";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const SignUpForm: React.FC = () => {
@@ -77,7 +77,6 @@ const SignUpForm: React.FC = () => {
 
   return (
     <div className="">
-      <ToastContainer />
       <Link to="/">
         <BiArrowBack className="text-2xl text-blue-600 cursor-pointer lg:hidden m-3" />
       </Link>

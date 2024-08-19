@@ -5,7 +5,7 @@ import { logo } from "../../assets/images";
 import { BiArrowBack } from "react-icons/bi";
 import { CgSpinner } from "react-icons/cg";
 import { useUser } from "../../context/UserContext";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const LoginForm: React.FC = () => {
@@ -55,7 +55,6 @@ const LoginForm: React.FC = () => {
   return (
     <div>
       <div className="lg:h-[100vh] lg:pr-36 mt-5 md:mt-24 mx-6">
-      <ToastContainer />
         <div className="w-full px-auto">
           <Link to="/">
             <BiArrowBack className="text-2xl text-blue-600 cursor-pointer lg:hidden" />

@@ -5,7 +5,7 @@ import advert from "../assets/contactAvatar.png";
 import Footer from "../components/Home/Footer";
 import ContactInfo from "../components/Contact/ContactInfo";
 import axios from "axios";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Contact: React.FC = () => {
@@ -65,7 +65,7 @@ const Contact: React.FC = () => {
   return (
     <div>
       <Navbar />
-      <ToastContainer />
+      
       <div className="w-full">
         <img src={contact} alt="" className="max-sm:h-[200px] relative object-cover" />
       </div>
