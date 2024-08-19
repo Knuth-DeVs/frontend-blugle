@@ -5,6 +5,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
 import { useUser } from "../../context/UserContext";
 import logo from "../../assets/logo.png";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 
 const SignUpForm: React.FC = () => {
   const [name, setName] = useState("");
@@ -49,17 +52,22 @@ const SignUpForm: React.FC = () => {
 
       if (response.status === 400) {
         console.log(response.data.message);
+        toast.error("Please try again, please check your credentials.");
       } else if (response.status === 409) {
         console.log(response.data.existingUserMessage);
+        toast.error("An account with this email already exists.");
       } else if (response.status === 500) {
         console.log(response.data.message);
+        toast.error("An error occurred during sign up.");
       } else if (response.status === 200) {
         console.log("The send was successful");
         setFullName(name); // Store full name in context and localStorage
         navigate("/login");
+        toast.success("Account created successfully!");
       }
     } catch (error) {
       console.error(error);
+      toast.error("An error occurred during sign up.");
     }
   };
 

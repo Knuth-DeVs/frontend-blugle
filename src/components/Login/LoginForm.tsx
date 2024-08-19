@@ -5,6 +5,8 @@ import { logo } from "../../assets/images";
 import { BiArrowBack } from "react-icons/bi";
 import { CgSpinner } from "react-icons/cg";
 import { useUser } from "../../context/UserContext";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const LoginForm: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -38,11 +40,13 @@ const LoginForm: React.FC = () => {
         } else {
           navigate("/patient/dashboard");
         }
+        toast.success("Logged in successfully!");
       } else {
-        console.log(response.data.message);
+        toast.error("Login not valid, please check your credentials.");
       }
     } catch (error) {
       console.error("Login error:", error);
+      toast.error("An error occurred during login.");
     } finally {
       setLoading(false);
     }

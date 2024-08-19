@@ -5,6 +5,7 @@ import advert from "../assets/contactAvatar.png";
 import Footer from "../components/Home/Footer";
 import ContactInfo from "../components/Contact/ContactInfo";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const Contact: React.FC = () => {
   //state management for the email body
@@ -23,6 +24,7 @@ const Contact: React.FC = () => {
   //handle submit function
   const handleSubmit = async (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
+
     try {
       const response = await axios.post(
         "https://blugle-server.onrender.com/api/email",
@@ -33,10 +35,22 @@ const Contact: React.FC = () => {
           },
         }
       );
+
       if (response.status === 200) {
         const responseBody = response.data;
         setResponseMessage(responseBody.message);
         console.log(responseMessage);
+
+        // Reset the email body state
+        setEmailBody({
+          messageSender: "",
+          senderEmail: "",
+          messageSubject: "",
+          messageBody: "",
+        });
+
+        // Display success toast message
+        toast.success("Email sent successfully!");
       }
     } catch (error) {
       console.error(error);
