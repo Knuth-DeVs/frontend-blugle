@@ -5,30 +5,26 @@ import advert from "../assets/contactAvatar.png";
 import Footer from "../components/Home/Footer";
 import ContactInfo from "../components/Contact/ContactInfo";
 import axios from "axios";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Contact: React.FC = () => {
-  //state management for the email body
   const [emailBody, setEmailBody] = useState({
     messageSender: "",
     senderEmail: "",
     messageSubject: "",
     messageBody: "",
-  }); //end of state management
-  //response body message
+  });
+
   const [responseMessage, setResponseMessage] = useState("");
 
-  //request body
-  const reqBody = emailBody;
-
-  //handle submit function
-  const handleSubmit = async (e: React.FormEvent<HTMLButtonElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
       const response = await axios.post(
         "https://blugle-server.onrender.com/api/email",
-        reqBody,
+        emailBody,
         {
           headers: {
             "Content-Type": "application/json",
@@ -41,7 +37,6 @@ const Contact: React.FC = () => {
         setResponseMessage(responseBody.message);
         console.log(responseMessage);
 
-        // Reset the email body state
         setEmailBody({
           messageSender: "",
           senderEmail: "",
@@ -49,15 +44,14 @@ const Contact: React.FC = () => {
           messageBody: "",
         });
 
-        // Display success toast message
         toast.success("Email sent successfully!", { position: "top-right" });
       }
     } catch (error) {
       console.error(error);
+      toast.error("Failed to send email. Please try again.", { position: "top-right" });
     }
   };
 
-  //handle change function for the email body
   const handleOnChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -67,16 +61,13 @@ const Contact: React.FC = () => {
       [name]: value,
     }));
   };
+
   return (
     <div>
       <Navbar />
+      <ToastContainer />
       <div className="w-full">
-        {/* <div className='bg-blue-500 w-full absolute max-sm:h-[200px]'/> */}
-        <img
-          src={contact}
-          alt=""
-          className="max-sm:h-[200px] relative object-cover"
-        />
+        <img src={contact} alt="" className="max-sm:h-[200px] relative object-cover" />
       </div>
       <p className="text-[#1941BA] text-2xl font-semibold p-6 md:pl-16">
         Find Us Here
@@ -90,7 +81,7 @@ const Contact: React.FC = () => {
           referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
-      <form action="https://blugle-server.onrender.com" method="POST">
+      <form onSubmit={handleSubmit}>
         <div className="border-2 border-blue-600 rounded-2xl flex flex-row p-2 md:mx-20 gap-6 mt-6 mx-6">
           <div className="hidden w-[400px] bg-blue-600 rounded-2xl py-auto md:flex md:flex-col md:items-center md:justify-center">
             <p className="text-white font-bold text-7xl px-3">
@@ -155,7 +146,7 @@ const Contact: React.FC = () => {
             </div>
             <button
               className="bg-navlinks p-2 rounded-xl mt-4 text-white hover:scale-105 duration-300 ease-linear"
-              onClick={handleSubmit}
+              type="submit"
             >
               Send Message
             </button>
