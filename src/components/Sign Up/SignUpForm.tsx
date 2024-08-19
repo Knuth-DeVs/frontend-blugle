@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
+import { CgSpinner } from "react-icons/cg";
 import { useUser } from "../../context/UserContext";
 import logo from "../../assets/logo.png";
 import { toast } from "react-toastify";
@@ -15,6 +16,7 @@ const SignUpForm: React.FC = () => {
   const [phone, setPhone] = useState("");
   const [pwd, setPwd] = useState("");
   const [address, setAddress] = useState("");
+  const [loading, setLoading] = useState(false);
   const { setFullName } = useUser();
   const navigate = useNavigate();
 
@@ -30,10 +32,12 @@ const SignUpForm: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
 
     // Basic client-side validation
     if (!firstName || !lastName || !email || !phone || !pwd || !address) {
       toast.error("Please fill all fields.", { position: "top-right" });
+      setLoading(false);
       return;
     }
 
@@ -66,6 +70,8 @@ const SignUpForm: React.FC = () => {
     } catch (error) {
       console.error(error);
       toast.error("An error occurred during sign up.", { position: "top-right" });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -77,7 +83,7 @@ const SignUpForm: React.FC = () => {
       <img src={logo} className="lg:hidden" />
       <div className="w-full mx-4 sm:mx-16 lg:pl-10 md:mt-6 mt-3">
         <div>
-          <h2 className="text-lg md:text-xl uppercase ">REGISTER</h2>
+          <h2 className="text-lg md:text-xl uppercase">REGISTER</h2>
           <p className="text-4xl md:text-5xl font-bold pt-2">
             Sign Up For Free
           </p>
@@ -88,11 +94,7 @@ const SignUpForm: React.FC = () => {
             </span>
           </p>
         </div>
-        <form
-          onSubmit={handleSubmit}
-          method="POST"
-          action="https://blugle-server.onrender.com/api/signup"
-        >
+        <form onSubmit={handleSubmit} method="POST">
           <div className="w-[330px] sm:w-[600px] lg:w-[400px]">
             <div className="mt-2 mb-2">
               <label className="">First Name</label>
@@ -181,9 +183,14 @@ const SignUpForm: React.FC = () => {
             </div>
             <button
               type="submit"
-              className="bg-navlinks py-2 px-3 mt-8 rounded-md text-center text-white cursor-pointer hover:scale-105 duration-300 ease-linear"
+              className="bg-navlinks py-2 px-3 mt-8 rounded-md text-center text-white cursor-pointer hover:scale-105 duration-300 ease-linear relative"
+              disabled={loading}
             >
-              SIGN UP
+              {loading ? (
+                <CgSpinner className="animate-spin h-5 w-5 mx-auto" />
+              ) : (
+                "SIGN UP"
+              )}
             </button>
           </div>
         </form>
