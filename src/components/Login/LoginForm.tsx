@@ -114,7 +114,7 @@ const LoginForm: React.FC = () => {
           </div>
           <button
             type="submit"
-            className="bg-navlinks py-2 px-3 rounded-md text-center text-white cursor-pointer w-full sm:w-[450px] hover:scale-105 duration-300 ease-linear"
+            className="bg-navlinks py-2 px-3 rounded-md text-center text-white cursor-pointer w-full sm:w-[450px] hover:scale-105 duration-300 ease-linear relative"
             disabled={loading}
           >
             {loading ? (
