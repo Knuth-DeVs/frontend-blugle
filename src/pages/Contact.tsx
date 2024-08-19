@@ -50,7 +50,7 @@ const Contact: React.FC = () => {
         });
 
         // Display success toast message
-        toast.success("Email sent successfully!");
+        toast.success("Email sent successfully!", { position: "top-right" });
       }
     } catch (error) {
       console.error(error);
